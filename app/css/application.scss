@@ -5,6 +5,7 @@
 html, body {
 	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
 	height: 100%;
+	color: $c-default;
 
 	div.wrapper {
 		display: flex;
@@ -46,10 +47,30 @@ html, body {
 				li.trip {
 					margin: 0px 0em 1em;
 					padding: 0px 1em 1em;
+
+
+					.collapse {
+						display: none;
+					}
+					.collapse.in {
+						display: block;
+					}
+					.collapsing {
+						position: relative;
+						height: 0;
+						overflow: hidden;
+						-webkit-transition: height .35s ease;
+						     -o-transition: height .35s ease;
+						        transition: height .35s ease;
+					}
 					
 					@include border-bottom;
 
-					h2 {
+					&> a {
+						color: $c-default;
+						border-bottom: 0px solid transparent; 
+						text-decoration: none;
+
 						.dest {
 						    font-size: 20px;
 						    font-weight: bolder;
@@ -72,6 +93,7 @@ html, body {
 						font-family: "Roboto Slab";
 						line-height: 1.4em;
 						font-style: italic;
+						border: 0px;
 					}
 					
 					h3 {

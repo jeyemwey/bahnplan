@@ -7,6 +7,8 @@ Place to share my travel plans.
 * scss
 * font-awesome
 * Google Maps API 3
+* jquery
+* Bootstrap
 
 ## Me on Twitter
 [@gltyllthsm](https://twitter.iamjannik.me)

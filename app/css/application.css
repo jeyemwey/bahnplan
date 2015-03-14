@@ -365,7 +365,8 @@ th {
 
 html, body {
   font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  height: 100%; }
+  height: 100%;
+  color: #1D1D1D; }
   html div.wrapper, body div.wrapper {
     display: flex;
     flex-direction: row;
@@ -397,23 +398,39 @@ html, body {
           margin: 0px 0em 1em;
           padding: 0px 1em 1em;
           border-bottom: 1px solid #d5d5d5; }
-          html div.wrapper div#sidebar ul#trippoints li.trip h2 .dest, body div.wrapper div#sidebar ul#trippoints li.trip h2 .dest {
-            font-size: 20px;
-            font-weight: bolder;
-            text-transform: capitalize; }
-          html div.wrapper div#sidebar ul#trippoints li.trip h2 .time, body div.wrapper div#sidebar ul#trippoints li.trip h2 .time {
-            font-weight: 300;
-            font-size: 14px;
-            float: right;
-            vertical-align: baseline;
-            margin-top: 8px;
-            width: 90px;
-            text-align: right; }
+          html div.wrapper div#sidebar ul#trippoints li.trip .collapse, body div.wrapper div#sidebar ul#trippoints li.trip .collapse {
+            display: none; }
+          html div.wrapper div#sidebar ul#trippoints li.trip .collapse.in, body div.wrapper div#sidebar ul#trippoints li.trip .collapse.in {
+            display: block; }
+          html div.wrapper div#sidebar ul#trippoints li.trip .collapsing, body div.wrapper div#sidebar ul#trippoints li.trip .collapsing {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: height .35s ease;
+            -o-transition: height .35s ease;
+            transition: height .35s ease; }
+          html div.wrapper div#sidebar ul#trippoints li.trip > a, body div.wrapper div#sidebar ul#trippoints li.trip > a {
+            color: #1D1D1D;
+            border-bottom: 0px solid transparent;
+            text-decoration: none; }
+            html div.wrapper div#sidebar ul#trippoints li.trip > a .dest, body div.wrapper div#sidebar ul#trippoints li.trip > a .dest {
+              font-size: 20px;
+              font-weight: bolder;
+              text-transform: capitalize; }
+            html div.wrapper div#sidebar ul#trippoints li.trip > a .time, body div.wrapper div#sidebar ul#trippoints li.trip > a .time {
+              font-weight: 300;
+              font-size: 14px;
+              float: right;
+              vertical-align: baseline;
+              margin-top: 8px;
+              width: 90px;
+              text-align: right; }
           html div.wrapper div#sidebar ul#trippoints li.trip blockquote, body div.wrapper div#sidebar ul#trippoints li.trip blockquote {
             margin: 1em 0px;
             font-family: "Roboto Slab";
             line-height: 1.4em;
-            font-style: italic; }
+            font-style: italic;
+            border: 0px; }
           html div.wrapper div#sidebar ul#trippoints li.trip h3, body div.wrapper div#sidebar ul#trippoints li.trip h3 {
             margin: 0px 0px 0.3em; }
           html div.wrapper div#sidebar ul#trippoints li.trip ul.friends, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends {
