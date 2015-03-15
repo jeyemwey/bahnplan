@@ -27,17 +27,22 @@ include "inc/init.php";
 					t.Title AS Title,
 					t.Description AS Description,
 					t.date_start AS date_start, 
-					t.date_end AS date_end, 
-					t.marker_address AS marker_address,
+					t.date_end AS date_end,
+					t.marker_coords AS marker_coords,
 					GROUP_CONCAT(DISTINCT CAST(f.id AS CHAR)) AS fellowID,
 					GROUP_CONCAT(DISTINCT CAST(f.twittername AS CHAR)) AS twitternames,
 					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
 					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
 					GROUP BY t.id");
 
+				$Markers = [];
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
+
+					$Markers[$Trip->Title] = $Trip->marker_coords;
 				endwhile;
+
+				print_r($Markers);
 				?>
 			</ul>
 			<footer><?= $Parsedown->text(p($page["footer"])); ?></footer>
@@ -61,8 +66,9 @@ include "inc/init.php";
     					animation: google.maps.Animation.DROP
 					});
 				}
-				addMarker(52.5093520, 13.3757390, "Berlin");
-				addMarker(53.5537365, 9.9927808, "Hamburg");
+				<?php foreach ($Markers as $Title => $Coords) : ?>
+					addMarker(<?= $Coords ?>, "<?= $Title ?>");
+				<?php endforeach; ?>
 			}
 
 			window.onload = initialize;
