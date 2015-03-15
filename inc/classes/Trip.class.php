@@ -3,7 +3,8 @@
 class Trip {
 	public $DateStart;
 	public $DateEnd;
-	public $oneDay;
+	public $oneDay = FALSE;
+	public $Friends = [];
 	
 
 	public function __construct() {
@@ -13,5 +14,13 @@ class Trip {
 		//Boolean Expression
 		$this->oneDay = ($this->DateStart == $this->DateEnd);
 
+		//match Friends with URLS
+		$FriendNames = explode(",", $this->twitternames);
+		$FriendUrls = explode(",", $this->avatar_urls);
+		for ($i=0; $i < count($FriendNames); $i++) { 
+			$this->Friends[$FriendNames[$i]] = $FriendUrls[$i];
+		}
+
+		//var_dump($this);
 	}
 }

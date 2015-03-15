@@ -22,7 +22,18 @@ include "inc/init.php";
 			</div>
 			<ul id="trippoints" id="accordion">
 				<?php
-				$Query = $mysqli->query("SELECT * FROM trips");
+				$Query = $mysqli->query("SELECT 
+					t.id AS id, 
+					t.Title AS Title,
+					t.Description AS Description,
+					t.date_start AS date_start, 
+					t.date_end AS date_end, 
+					t.marker_address AS marker_address,
+					GROUP_CONCAT(DISTINCT CAST(f.id AS CHAR)) AS fellowID,
+					GROUP_CONCAT(DISTINCT CAST(f.twittername AS CHAR)) AS twitternames,
+					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
+					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
+					GROUP BY t.id");
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
 				endwhile;

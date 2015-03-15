@@ -10,5 +10,9 @@ Place to share my travel plans.
 * jquery
 * Bootstrap
 
+## Thanks to
+
+* The guy on [StackOverflow](http://stackoverflow.com/questions/29059090/table-inside-of-another) who gave me the query string.
+
 ## Me on Twitter
 [@gltyllthsm](https://twitter.iamjannik.me)
