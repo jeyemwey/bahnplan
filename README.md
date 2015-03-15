@@ -9,6 +9,7 @@ Place to share my travel plans.
 * Google Maps API 3
 * jquery
 * Bootstrap
+* Parsedown
 
 ## Thanks to
 

@@ -94,6 +94,15 @@ html, body {
 						line-height: 1.4em;
 						font-style: italic;
 						border: 0px;
+
+						* {
+							padding: 0;
+							margin: 0;
+						}
+						a {
+							text-decoration: none;
+							color: #3DAEF5;
+						}
 					}
 					
 					h3 {

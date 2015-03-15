@@ -13,7 +13,7 @@
 	<div class="clearfix"></div>
 	<div id="collapse-<?= $Trip->id ?>" class="collapse <?= (!($Trip->id -1))? "in" : "" ?>">
 		<blockquote>
-			<?= $Trip->Description; ?>
+			<?= $Parsedown->text($Trip->Description); ?>
 		</blockquote>
 		<?php if (!empty($Trip->Friends)): ?>
 			<h3>Mitfahrend</h3>

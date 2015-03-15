@@ -431,6 +431,12 @@ html, body {
             line-height: 1.4em;
             font-style: italic;
             border: 0px; }
+            html div.wrapper div#sidebar ul#trippoints li.trip blockquote *, body div.wrapper div#sidebar ul#trippoints li.trip blockquote * {
+              padding: 0;
+              margin: 0; }
+            html div.wrapper div#sidebar ul#trippoints li.trip blockquote a, body div.wrapper div#sidebar ul#trippoints li.trip blockquote a {
+              text-decoration: none;
+              color: #3DAEF5; }
           html div.wrapper div#sidebar ul#trippoints li.trip h3, body div.wrapper div#sidebar ul#trippoints li.trip h3 {
             margin: 0px 0px 0.3em; }
           html div.wrapper div#sidebar ul#trippoints li.trip ul.friends, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends {

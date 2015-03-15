@@ -34,6 +34,9 @@ include "inc/init.php";
 					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
 					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
 					GROUP BY t.id");
+
+				$Parsedown = new Parsedown();
+
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
 				endwhile;
