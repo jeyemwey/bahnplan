@@ -20,11 +20,11 @@
 			<ul id="trippoints" id="accordion">
 				<?php for ($i=0; $i < 2; $i++) : ?>
 					<li class="trip">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<?= $i ?>">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse-<?= $i ?>">
 							<span class="dest">Berlin</span>
 							<span class="time">11.07.2015</span>
 						</a>
-						<div id="collapse<?= $i ?>" class="collapse <?= (!$i)? "in" : "" ?>">
+						<div id="collapse-<?= $i ?>" class="collapse <?= (!$i)? "in" : "" ?>">
 							<blockquote>
 								#twerlin
 							</blockquote>
@@ -60,8 +60,8 @@
     					animation: google.maps.Animation.DROP
 					});
 				}
-				addMarker(52.5093520,13.3757390, "Berlin");
-				addMarker(53.5537365,9.9927808, "Hamburg");
+				addMarker(52.5093520, 13.3757390, "Berlin");
+				addMarker(53.5537365, 9.9927808, "Hamburg");
 			}
 
 			window.onload = initialize;
