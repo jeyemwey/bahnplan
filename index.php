@@ -6,7 +6,7 @@ include "inc/init.php";
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Janniks Bahnplan</title>
+	<title><?= p($page['title']); ?></title>
 	<link rel="stylesheet" type="text/css" href="app/css/application.css" />
 	<link rel="stylesheet" type="text/css" href="app/css/font-awesome.min.css" />
 
@@ -17,7 +17,7 @@ include "inc/init.php";
 		<div id="sidebar">
 			<div id="logo-wrapper">
 				<div id="logo">
-					<h1><i class="fa fa-train"></i> Janniks Bahnplan</h1>
+					<h1><i class="fa fa-train"></i> <?= p($page['title']); ?></h1>
 				</div>
 			</div>
 			<ul id="trippoints" id="accordion">
@@ -35,13 +35,12 @@ include "inc/init.php";
 					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
 					GROUP BY t.id");
 
-				$Parsedown = new Parsedown();
-
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
 				endwhile;
 				?>
 			</ul>
+			<footer><?= $Parsedown->text(p($page["footer"])); ?></footer>
 		</div>
 		<div id="map_canvas">
 			<script type="text/javascript">
