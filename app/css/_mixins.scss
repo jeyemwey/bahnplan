@@ -14,3 +14,17 @@
     visibility: hidden;
     height: 0px;
 }
+
+@mixin userwrittencontent {
+	font-family: "Roboto Slab";
+	border: 0px;
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+		color: #3DAEF5;
+	}
+}

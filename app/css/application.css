@@ -426,11 +426,17 @@ html, body {
               width: 90px;
               text-align: right; }
           html div.wrapper div#sidebar ul#trippoints li.trip blockquote, body div.wrapper div#sidebar ul#trippoints li.trip blockquote {
-            margin: 1em 0px;
             font-family: "Roboto Slab";
+            border: 0px;
+            margin: 1em 0px;
             line-height: 1.4em;
-            font-style: italic;
-            border: 0px; }
+            font-style: italic; }
+            html div.wrapper div#sidebar ul#trippoints li.trip blockquote *, body div.wrapper div#sidebar ul#trippoints li.trip blockquote * {
+              padding: 0;
+              margin: 0; }
+            html div.wrapper div#sidebar ul#trippoints li.trip blockquote a, body div.wrapper div#sidebar ul#trippoints li.trip blockquote a {
+              text-decoration: none;
+              color: #3DAEF5; }
           html div.wrapper div#sidebar ul#trippoints li.trip h3, body div.wrapper div#sidebar ul#trippoints li.trip h3 {
             margin: 0px 0px 0.3em; }
           html div.wrapper div#sidebar ul#trippoints li.trip ul.friends, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends {
@@ -441,6 +447,18 @@ html, body {
               html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img {
                 width: 52px;
                 border-radius: 0.2em; }
+      html div.wrapper div#sidebar footer, body div.wrapper div#sidebar footer {
+        font-family: "Roboto Slab";
+        border: 0px;
+        margin: 0 1em 1em;
+        font-size: 0.8em;
+        line-height: 1.4em; }
+        html div.wrapper div#sidebar footer *, body div.wrapper div#sidebar footer * {
+          padding: 0;
+          margin: 0; }
+        html div.wrapper div#sidebar footer a, body div.wrapper div#sidebar footer a {
+          text-decoration: none;
+          color: #3DAEF5; }
     html div.wrapper #map_canvas, body div.wrapper #map_canvas {
       height: 100%;
       background-color: #f9f9bb;

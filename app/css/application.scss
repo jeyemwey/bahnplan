@@ -89,11 +89,12 @@ html, body {
 						}
 					}
 					blockquote {
+						@include userwrittencontent;
+
 						margin: 1em 0px;
-						font-family: "Roboto Slab";
 						line-height: 1.4em;
 						font-style: italic;
-						border: 0px;
+						
 					}
 					
 					h3 {
@@ -111,6 +112,13 @@ html, body {
 						}
 					}
 				}
+			}
+
+			footer {
+				@include userwrittencontent;
+				margin: 0 1em 1em;
+				font-size: 0.8em;
+				line-height: 1.4em;
 			}
 		}
 		#map_canvas {
