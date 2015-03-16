@@ -412,6 +412,8 @@ html, body {
           padding: 1em 0.5em;
           width: 100%;
           box-sizing: border-box; }
+      html table tr td#description-markdown-interpreted, body table tr td#description-markdown-interpreted {
+        padding: 0px 1em; }
       html table tr .title, body table tr .title {
         width: 30%; }
       html table tr .dates, body table tr .dates {

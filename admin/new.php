@@ -17,8 +17,25 @@
 			<td class="label"><label for="description">Beschreibung (<i class="fa fa-font">Markdown!</i>):</label></td>
 			<td id="description-raw"><textarea name="description" id="description"></textarea></td>
 			<td id="description-markdown-interpreted"></td>
+			<script type="text/javascript">
+			$("#description").on("blur", function() {
+				var request = {
+					text: $(this).val()
+				};
+				$.ajax({
+					type: "POST",
+					url: 'md.php',
+					data: request,
+					success: function(md) {
+						console.log(md.text);
+						$("#description-markdown-interpreted").html(md.text);
+					}
+				});
+			});
+			</script>
 		</tr>
 	</table>
 	<h3>Mitkommend:</h3>
 	<input type="submit" value="Reise einspeichern" />
 </form>
+<?php include "partials/footer.php";
