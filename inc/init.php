@@ -2,7 +2,10 @@
 
 //Autoload
 spl_autoload_register(function ($class) {
-    include 'inc/classes/' . $class . '.class.php';
+	if (ADMIN)
+		include '../inc/classes/' . $class . '.class.php';
+	else
+    	include 'inc/classes/' . $class . '.class.php';
 });
 
 //p function

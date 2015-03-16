@@ -1,4 +1,5 @@
 <?php
+define("ADMIN", FALSE);
 include "inc/init.php";
 ?>
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ include "inc/init.php";
 					GROUP BY t.id");
 
 				$Markers = [];
-				while ($Trip = $Query->fetch_object("Trip")): 
+				while ($Trip = $Query->fetch_object("TripInMain")): 
 					include "app/partials/trip.php";
 
 					$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);

@@ -1,0 +1,73 @@
+@import "vars";
+@import "mixins";
+@import "normalize";
+@import "base";
+
+html, body {
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+	color: $c-default;
+
+	max-width: 1170px;
+	width: 100%;
+	margin: 0px auto;
+
+	nav {
+		@include border-bottom;
+		margin-bottom: 18px;
+
+		div#logo-wrapper {
+			float: left;
+			div#logo {
+				margin-left: 0px;
+			}
+		}
+		ul {
+			@include destroy-list;
+			padding-left: 1em;
+
+			float: left;
+			line-height: 62px;
+			
+			li {
+				display: inline;
+				margin-left: 1em;
+				a {
+					color: $c-link;
+			    	text-decoration: none;
+				}
+			}
+		}
+	}
+
+	table#list-all {
+		width: 100%;
+
+		tr {
+			@include border-bottom;
+		
+			th {
+				padding-bottom: 1em;
+			}
+
+			.title {
+			    width: 30%;
+			}
+
+			.dates {
+			    width: 200px;
+			}
+			
+			.action {
+			    width: 100px;
+			    a {
+			    	color: $c-link;
+			    	text-decoration: none;
+			    	i {
+			    		color: $c-default;
+			    		padding-right: .5em;
+			    	}
+			    }
+			}
+		}
+	}
+}

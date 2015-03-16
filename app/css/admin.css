@@ -376,100 +376,46 @@ div#logo-wrapper div#logo {
 
 html, body {
   font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  height: 100%;
-  color: #1D1D1D; }
-  html div.wrapper, body div.wrapper {
-    display: flex;
-    flex-direction: row;
-    height: 100%; }
-    html div.wrapper > *, body div.wrapper > * {
-      height: 100%; }
-    html div.wrapper div#sidebar, body div.wrapper div#sidebar {
-      flex-grow: 1;
-      width: 290px;
-      height: 100%;
-      overflow-y: auto; }
-      html div.wrapper div#sidebar div#logo-wrapper, body div.wrapper div#sidebar div#logo-wrapper {
-        border-bottom: 1px solid #d5d5d5; }
-      html div.wrapper div#sidebar ul#trippoints, body div.wrapper div#sidebar ul#trippoints {
-        padding: 0px;
-        list-style-type: none;
-        display: block; }
-        html div.wrapper div#sidebar ul#trippoints li.trip, body div.wrapper div#sidebar ul#trippoints li.trip {
-          margin: 0px 0em 1em;
-          padding: 0px 1em 1em;
-          border-bottom: 1px solid #d5d5d5; }
-          html div.wrapper div#sidebar ul#trippoints li.trip .collapse, body div.wrapper div#sidebar ul#trippoints li.trip .collapse {
-            display: none; }
-          html div.wrapper div#sidebar ul#trippoints li.trip .collapse.in, body div.wrapper div#sidebar ul#trippoints li.trip .collapse.in {
-            display: block; }
-          html div.wrapper div#sidebar ul#trippoints li.trip .collapsing, body div.wrapper div#sidebar ul#trippoints li.trip .collapsing {
-            position: relative;
-            height: 0;
-            overflow: hidden;
-            -webkit-transition: height .35s ease;
-            -o-transition: height .35s ease;
-            transition: height .35s ease; }
-          html div.wrapper div#sidebar ul#trippoints li.trip > a, body div.wrapper div#sidebar ul#trippoints li.trip > a {
+  color: #1D1D1D;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0px auto; }
+  html nav, body nav {
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 18px; }
+    html nav div#logo-wrapper, body nav div#logo-wrapper {
+      float: left; }
+      html nav div#logo-wrapper div#logo, body nav div#logo-wrapper div#logo {
+        margin-left: 0px; }
+    html nav ul, body nav ul {
+      padding: 0px;
+      list-style-type: none;
+      padding-left: 1em;
+      float: left;
+      line-height: 62px; }
+      html nav ul li, body nav ul li {
+        display: inline;
+        margin-left: 1em; }
+        html nav ul li a, body nav ul li a {
+          color: #3DAEF5;
+          text-decoration: none; }
+  html table#list-all, body table#list-all {
+    width: 100%; }
+    html table#list-all tr, body table#list-all tr {
+      border-bottom: 1px solid #d5d5d5; }
+      html table#list-all tr th, body table#list-all tr th {
+        padding-bottom: 1em; }
+      html table#list-all tr .title, body table#list-all tr .title {
+        width: 30%; }
+      html table#list-all tr .dates, body table#list-all tr .dates {
+        width: 200px; }
+      html table#list-all tr .action, body table#list-all tr .action {
+        width: 100px; }
+        html table#list-all tr .action a, body table#list-all tr .action a {
+          color: #3DAEF5;
+          text-decoration: none; }
+          html table#list-all tr .action a i, body table#list-all tr .action a i {
             color: #1D1D1D;
-            border-bottom: 0px solid transparent;
-            text-decoration: none; }
-            html div.wrapper div#sidebar ul#trippoints li.trip > a .dest, body div.wrapper div#sidebar ul#trippoints li.trip > a .dest {
-              font-size: 20px;
-              font-weight: bolder;
-              text-transform: capitalize; }
-            html div.wrapper div#sidebar ul#trippoints li.trip > a .time, body div.wrapper div#sidebar ul#trippoints li.trip > a .time {
-              font-weight: 300;
-              font-size: 14px;
-              float: right;
-              vertical-align: baseline;
-              margin-top: 5px;
-              width: 90px;
-              text-align: right; }
-          html div.wrapper div#sidebar ul#trippoints li.trip blockquote, body div.wrapper div#sidebar ul#trippoints li.trip blockquote {
-            font-family: "Roboto Slab";
-            border: 0px;
-            margin: 1em 0px;
-            line-height: 1.4em;
-            font-style: italic; }
-            html div.wrapper div#sidebar ul#trippoints li.trip blockquote *, body div.wrapper div#sidebar ul#trippoints li.trip blockquote * {
-              padding: 0;
-              margin: 0; }
-            html div.wrapper div#sidebar ul#trippoints li.trip blockquote a, body div.wrapper div#sidebar ul#trippoints li.trip blockquote a {
-              text-decoration: none;
-              color: #3DAEF5; }
-          html div.wrapper div#sidebar ul#trippoints li.trip h3, body div.wrapper div#sidebar ul#trippoints li.trip h3 {
-            margin: 0px 0px 0.3em; }
-          html div.wrapper div#sidebar ul#trippoints li.trip ul.friends, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends {
-            padding: 0px;
-            list-style-type: none; }
-            html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li {
-              display: inline; }
-              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img {
-                width: 52px;
-                border-radius: 0.2em; }
-      html div.wrapper div#sidebar footer, body div.wrapper div#sidebar footer {
-        font-family: "Roboto Slab";
-        border: 0px;
-        margin: 0 1em 1em;
-        font-size: 0.8em;
-        line-height: 1.4em; }
-        html div.wrapper div#sidebar footer *, body div.wrapper div#sidebar footer * {
-          padding: 0;
-          margin: 0; }
-        html div.wrapper div#sidebar footer a, body div.wrapper div#sidebar footer a {
-          text-decoration: none;
-          color: #3DAEF5; }
-    html div.wrapper #map_canvas, body div.wrapper #map_canvas {
-      height: 100%;
-      background-color: #f9f9bb;
-      flex-grow: 7;
-      width: calc(100% - 290px); }
+            padding-right: .5em; }
 
-::-moz-selection {
-  background: #f9f9bb; }
-
-::selection {
-  background: #f9f9bb; }
-
-/*# sourceMappingURL=application.css.map */
+/*# sourceMappingURL=admin.css.map */
