@@ -21,6 +21,11 @@ class Trip {
 			$this->Friends[$FriendNames[$i]] = $FriendUrls[$i];
 		}
 
+		//Coords
+		$Coords = explode(",", $this->marker_coords);
+		$this->lat = trim($Coords[0]);
+		$this->lng = trim($Coords[1]);
+
 		//var_dump($this);
 	}
 }

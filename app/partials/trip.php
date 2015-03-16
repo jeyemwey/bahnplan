@@ -11,7 +11,7 @@
 		</span>
 	</a>
 	<div class="clearfix"></div>
-	<div id="collapse-<?= $Trip->id ?>" class="collapse <?= (!($Trip->id -1))? "in" : "" ?>">
+	<div id="collapse-<?= $Trip->id ?>" class="collapse <?= (!($Trip->id -1))? "in" : "" ?>" data-lat="<?= $Trip->lat ?>" data-lng="<?= $Trip->lng ?>">
 		<blockquote>
 			<?= $Parsedown->text($Trip->Description); ?>
 		</blockquote>

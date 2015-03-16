@@ -39,10 +39,9 @@ include "inc/init.php";
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
 
-					$Markers[$Trip->Title] = $Trip->marker_coords;
+					$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);
 				endwhile;
 
-				print_r($Markers);
 				?>
 			</ul>
 			<footer><?= $Parsedown->text(p($page["footer"])); ?></footer>
@@ -58,6 +57,7 @@ include "inc/init.php";
 				}
 				var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
+				//New Markers
 				function addMarker(lat, lng, title) {
 					var marker = new google.maps.Marker({
 						position: new google.maps.LatLng(lat, lng),
@@ -66,9 +66,27 @@ include "inc/init.php";
     					animation: google.maps.Animation.DROP
 					});
 				}
-				<?php foreach ($Markers as $Title => $Coords) : ?>
+				<?php foreach ($Markers as $id => $Marker) : ?>
+					<?php list($Title, $Coords) = $Marker; ?>
 					addMarker(<?= $Coords ?>, "<?= $Title ?>");
 				<?php endforeach; ?>
+
+
+				//Onclick
+				$(".collapse").on("show.bs.collapse", function() {
+					var lat = $(this).data("lat");
+					var lng = $(this).data("lng");
+
+					console.log(lat + lng);
+
+					$(".collapse:not(#" + $(this).attr("id") + ")").collapse("hide");
+
+
+					//set Map Center
+					map.setZoom(10);
+  					map.setCenter(new google.maps.LatLng(lat, lng));
+				});
+
 			}
 
 			window.onload = initialize;
@@ -76,8 +94,9 @@ include "inc/init.php";
 		</div>
 	</div>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/js/app.js"></script>
 </body>
 </html>
 <?php include "inc/die.php"; ?>
