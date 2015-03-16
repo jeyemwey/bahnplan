@@ -381,8 +381,7 @@ html, body {
   width: 100%;
   margin: 0px auto; }
   html nav, body nav {
-    border-bottom: 1px solid #d5d5d5;
-    margin-bottom: 18px; }
+    border-bottom: 1px solid #d5d5d5; }
     html nav div#logo-wrapper, body nav div#logo-wrapper {
       float: left; }
       html nav div#logo-wrapper div#logo, body nav div#logo-wrapper div#logo {
@@ -399,23 +398,39 @@ html, body {
         html nav ul li a, body nav ul li a {
           color: #3DAEF5;
           text-decoration: none; }
-  html table#list-all, body table#list-all {
+  html table, body table {
     width: 100%; }
-    html table#list-all tr, body table#list-all tr {
+    html table tr, body table tr {
       border-bottom: 1px solid #d5d5d5; }
-      html table#list-all tr th, body table#list-all tr th {
-        padding-bottom: 1em; }
-      html table#list-all tr .title, body table#list-all tr .title {
+      html table tr th, html table tr td, body table tr th, body table tr td {
+        padding: 1em 0; }
+      html table tr td.label, body table tr td.label {
         width: 30%; }
-      html table#list-all tr .dates, body table#list-all tr .dates {
+      html table tr td#description-raw, html table tr td#description-markdown-interpreted, body table tr td#description-raw, body table tr td#description-markdown-interpreted {
+        width: 35%; }
+        html table tr td#description-raw textarea, html table tr td#description-markdown-interpreted textarea, body table tr td#description-raw textarea, body table tr td#description-markdown-interpreted textarea {
+          padding: 1em 0.5em;
+          width: 100%;
+          box-sizing: border-box; }
+      html table tr .title, body table tr .title {
+        width: 30%; }
+      html table tr .dates, body table tr .dates {
         width: 200px; }
-      html table#list-all tr .action, body table#list-all tr .action {
+      html table tr .action, body table tr .action {
         width: 100px; }
-        html table#list-all tr .action a, body table#list-all tr .action a {
+        html table tr .action a, body table tr .action a {
           color: #3DAEF5;
           text-decoration: none; }
-          html table#list-all tr .action a i, body table#list-all tr .action a i {
+          html table tr .action a i, body table tr .action a i {
             color: #1D1D1D;
             padding-right: .5em; }
+      html table tr input[type="text"], html table tr input[type="date"], body table tr input[type="text"], body table tr input[type="date"] {
+        padding: 1em 0.5em;
+        width: 100%;
+        box-sizing: border-box; }
+      html table tr input#title, body table tr input#title {
+        font-size: 20px;
+        font-weight: bolder;
+        text-transform: capitalize; }
 
 /*# sourceMappingURL=admin.css.map */

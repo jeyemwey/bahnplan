@@ -13,8 +13,7 @@ html, body {
 
 	nav {
 		@include border-bottom;
-		margin-bottom: 18px;
-
+		
 		div#logo-wrapper {
 			float: left;
 			div#logo {
@@ -39,15 +38,29 @@ html, body {
 		}
 	}
 
-	table#list-all {
+	table {
 		width: 100%;
 
 		tr {
 			@include border-bottom;
-		
-			th {
-				padding-bottom: 1em;
+
+			th, td {
+				padding: 1em 0;
 			}
+			td.label {
+				width: 30%;
+			}
+			td#description-raw, td#description-markdown-interpreted {
+				width: 35%;
+
+				textarea {
+					
+					padding: 1em 0.5em;
+					width: 100%;
+					box-sizing: border-box;
+				}
+			}
+
 
 			.title {
 			    width: 30%;
@@ -67,6 +80,20 @@ html, body {
 			    		padding-right: .5em;
 			    	}
 			    }
+			}
+
+			input {
+				&[type="text"], &[type="date"] {
+					padding: 1em 0.5em;
+					width: 100%;
+					box-sizing: border-box;
+				}
+
+				&#title {
+					font-size: 20px;
+				    font-weight: bolder;
+				    text-transform: capitalize;
+				}
 			}
 		}
 	}
