@@ -73,7 +73,7 @@ include "inc/init.php";
 
 
 				//Onclick
-				$(".collapse").on("show.bs.collapse", function() {
+				$(".collapse").on("shown.bs.collapse", function() {
 					var lat = $(this).data("lat");
 					var lng = $(this).data("lng");
 
@@ -96,7 +96,6 @@ include "inc/init.php";
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app/js/app.js"></script>
 </body>
 </html>
 <?php include "inc/die.php"; ?>
