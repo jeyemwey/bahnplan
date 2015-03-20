@@ -2,8 +2,7 @@
 @import "mixins";
 @import "normalize";
 @import "base";
-
-html, body {
+body {
 	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
 	color: $c-default;
 
@@ -38,6 +37,10 @@ html, body {
 		}
 	}
 
+	input, textarea {
+		border: 1px solid $c-grey;
+	}
+
 	table {
 		width: 100%;
 
@@ -54,14 +57,16 @@ html, body {
 				width: 35%;
 
 				textarea {
-					
+					@include userwrittencontent;
 					padding: 1em 0.5em;
 					width: 100%;
 					box-sizing: border-box;
+					border: 1px solid $c-grey;
 				}
 			}
 			td#description-markdown-interpreted {
-				padding: 0px 1em;
+				padding: .5em 1em;
+				vertical-align: top;
 			}
 
 
@@ -98,6 +103,16 @@ html, body {
 				    text-transform: capitalize;
 				}
 			}
+		}
+	}
+
+	tr.text-right {
+		text-align: right;
+		input[type="submit"] {
+			margin-top: 2em;
+			float: right;
+			padding: 0.7em;
+			background-color: white;
 		}
 	}
 }

@@ -374,65 +374,84 @@ div#logo-wrapper div#logo {
     letter-spacing: -1px;
     text-align: center; }
 
-html, body {
+body {
   font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
   color: #1D1D1D;
   max-width: 1170px;
   width: 100%;
   margin: 0px auto; }
-  html nav, body nav {
+  body nav {
     border-bottom: 1px solid #d5d5d5; }
-    html nav div#logo-wrapper, body nav div#logo-wrapper {
+    body nav div#logo-wrapper {
       float: left; }
-      html nav div#logo-wrapper div#logo, body nav div#logo-wrapper div#logo {
+      body nav div#logo-wrapper div#logo {
         margin-left: 0px; }
-    html nav ul, body nav ul {
+    body nav ul {
       padding: 0px;
       list-style-type: none;
       padding-left: 1em;
       float: left;
       line-height: 62px; }
-      html nav ul li, body nav ul li {
+      body nav ul li {
         display: inline;
         margin-left: 1em; }
-        html nav ul li a, body nav ul li a {
+        body nav ul li a {
           color: #3DAEF5;
           text-decoration: none; }
-  html table, body table {
+  body input, body textarea {
+    border: 1px solid #d5d5d5; }
+  body table {
     width: 100%; }
-    html table tr, body table tr {
+    body table tr {
       border-bottom: 1px solid #d5d5d5; }
-      html table tr th, html table tr td, body table tr th, body table tr td {
+      body table tr th, body table tr td {
         padding: 1em 0; }
-      html table tr td.label, body table tr td.label {
+      body table tr td.label {
         width: 30%; }
-      html table tr td#description-raw, html table tr td#description-markdown-interpreted, body table tr td#description-raw, body table tr td#description-markdown-interpreted {
+      body table tr td#description-raw, body table tr td#description-markdown-interpreted {
         width: 35%; }
-        html table tr td#description-raw textarea, html table tr td#description-markdown-interpreted textarea, body table tr td#description-raw textarea, body table tr td#description-markdown-interpreted textarea {
+        body table tr td#description-raw textarea, body table tr td#description-markdown-interpreted textarea {
+          font-family: "Roboto Slab";
+          border: 0px;
           padding: 1em 0.5em;
           width: 100%;
-          box-sizing: border-box; }
-      html table tr td#description-markdown-interpreted, body table tr td#description-markdown-interpreted {
-        padding: 0px 1em; }
-      html table tr .title, body table tr .title {
+          box-sizing: border-box;
+          border: 1px solid #d5d5d5; }
+          body table tr td#description-raw textarea *, body table tr td#description-markdown-interpreted textarea * {
+            padding: 0;
+            margin: 0; }
+          body table tr td#description-raw textarea a, body table tr td#description-markdown-interpreted textarea a {
+            text-decoration: none;
+            color: #3DAEF5; }
+      body table tr td#description-markdown-interpreted {
+        padding: .5em 1em;
+        vertical-align: top; }
+      body table tr .title {
         width: 30%; }
-      html table tr .dates, body table tr .dates {
+      body table tr .dates {
         width: 200px; }
-      html table tr .action, body table tr .action {
+      body table tr .action {
         width: 100px; }
-        html table tr .action a, body table tr .action a {
+        body table tr .action a {
           color: #3DAEF5;
           text-decoration: none; }
-          html table tr .action a i, body table tr .action a i {
+          body table tr .action a i {
             color: #1D1D1D;
             padding-right: .5em; }
-      html table tr input[type="text"], html table tr input[type="date"], body table tr input[type="text"], body table tr input[type="date"] {
+      body table tr input[type="text"], body table tr input[type="date"] {
         padding: 1em 0.5em;
         width: 100%;
         box-sizing: border-box; }
-      html table tr input#title, body table tr input#title {
+      body table tr input#title {
         font-size: 20px;
         font-weight: bolder;
         text-transform: capitalize; }
+  body tr.text-right {
+    text-align: right; }
+    body tr.text-right input[type="submit"] {
+      margin-top: 2em;
+      float: right;
+      padding: 0.7em;
+      background-color: white; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -1,4 +1,13 @@
-<?php include "partials/header.php"; ?>
+<?php
+
+define("ADMIN", true);
+include "../inc/init.php";
+
+$feonly = true;
+include "partials/header.php";
+?>
+<h2>Neue Reise</h2>
+
 <form method="POST" action="new.php">
 	<table>
 		<tr>
@@ -34,8 +43,13 @@
 			});
 			</script>
 		</tr>
+		<tr>
+			<td class="label"><label for="address">Adresse für den Marker:</label></td>
+			<td colspan="2"><input type="text" name="address" id="address" value="<?= p($_POST['address']) ?>" /></td>
+		</tr>
+		<tr class="text-right">
+			<td colspan="3"><input type="submit" value="Reise einspeichern" /></td>
+		</tr>
 	</table>
-	<h3>Mitkommend:</h3>
-	<input type="submit" value="Reise einspeichern" />
 </form>
 <?php include "partials/footer.php";

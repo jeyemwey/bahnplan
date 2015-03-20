@@ -1,5 +1,4 @@
 <?php
-
 //Autoload
 spl_autoload_register(function ($class) {
 	if (ADMIN)
