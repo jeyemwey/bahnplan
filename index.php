@@ -33,9 +33,11 @@ include "inc/init.php";
 					GROUP_CONCAT(DISTINCT CAST(f.twittername AS CHAR)) AS twitternames,
 					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
 					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
-					GROUP BY t.id");
+					GROUP BY t.id
+					ORDER BY t.date_start;");
 
 				$Markers = [];
+				$first = true;
 				while ($Trip = $Query->fetch_object("Trip")): 
 					include "app/partials/trip.php";
 
