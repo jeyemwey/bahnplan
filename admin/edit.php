@@ -14,14 +14,6 @@ if(isset($_POST["submit"])) {
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
 
-	$sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
-		'{$Title}',
-		'{$date_start->format("Y-m-d H:i:s")}',
-		'{$date_end->format("Y-m-d H:i:s")}',
-		'{$Address->Address}',
-		'{$Address->Lat}, {$Address->Lng}',
-		'{$Description}');";
-
 	$sql = "UPDATE trips SET
 		Title = '{$Title}',
 		date_start = '{$date_start->format("Y-m-d H:i:s")}',
@@ -29,7 +21,6 @@ if(isset($_POST["submit"])) {
 		marker_address = '{$Address->Address}',
 		marker_coords = '{$Address->Lat}, {$Address->Lng}',
 		Description = '{$Description}'
-
 
 		WHERE id = {$id};";
 
