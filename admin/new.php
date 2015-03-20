@@ -3,6 +3,26 @@
 define("ADMIN", true);
 include "../inc/init.php";
 
+if(isset($_POST["submit"])) {
+
+	$Title = mysql_real_escape_string(htmlentities($_POST["title"]));
+	$date_start = new DateTime($_POST["date_start"]);
+	$date_end = new DateTime($_POST["date_end"]);
+	$Description = mysql_real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
+	$Address = new Address(htmlentities($_POST["address"]));
+
+	echo $sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
+		'{$Title}',
+		'{$date_start->format("Y-m-d H:i:s")}',
+		'{$date_end->format("Y-m-d H:i:s")}',
+		'{$Address->Address}',
+		'{$Address->Lat}, {$Address->Lng}',
+		'{$Description}');";
+
+	if($mysqli->query($sql)) 
+		header("Location: edit.php?id=" . $mysqli->insert_id);
+}
+
 $feonly = true;
 include "partials/header.php";
 ?>
@@ -48,7 +68,7 @@ include "partials/header.php";
 			<td colspan="2"><input type="text" name="address" id="address" value="<?= p($_POST['address']) ?>" /></td>
 		</tr>
 		<tr class="text-right">
-			<td colspan="3"><input type="submit" value="Reise einspeichern" /></td>
+			<td colspan="3"><input type="submit" name="submit" value="Reise einspeichern" /></td>
 		</tr>
 	</table>
 </form>
