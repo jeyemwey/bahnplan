@@ -41,6 +41,19 @@ body {
 		border: 1px solid $c-grey;
 	}
 
+	#title {
+		h2 {
+			display: inline-block;
+			line-height: 1.5em;
+		}
+		code {
+			float: right;
+			line-height: 36px;
+			margin: 19px 0px;
+			font-size: 30px;
+			font-family: "Roboto Slab", "Georgia", "Times", sans-serif;
+		}
+	}
 	table {
 		width: 100%;
 

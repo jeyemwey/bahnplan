@@ -31,6 +31,9 @@
 					}
 				});
 			});
+			$(function() {
+				$("#description").triggerHandler("blur");
+			});
 			</script>
 		</tr>
 		<tr>

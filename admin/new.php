@@ -10,6 +10,7 @@ if(isset($_POST["submit"])) {
 	$date_end = new DateTime($_POST["date_end"]);
 	$Description = mysql_real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
 	$Address = new Address(htmlentities($_POST["address"]));
+	$Address->getLatLng();
 
 	echo $sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
 		'{$Title}',
