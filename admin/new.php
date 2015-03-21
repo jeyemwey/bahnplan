@@ -1,6 +1,5 @@
 <?php
 
-define("ADMIN", true);
 include "../inc/init.php";
 
 if(isset($_POST["submit"])) {

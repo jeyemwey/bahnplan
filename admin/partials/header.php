@@ -1,6 +1,5 @@
 <?php
 if (!isset($feonly)):
-	define("ADMIN", TRUE);
 	include "../inc/init.php";
 endif;
 ?>

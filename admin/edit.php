@@ -1,6 +1,5 @@
 <?php
 
-define("ADMIN", true);
 include "../inc/init.php";
 
 $id = (int) p($_GET["trip_id"]);
