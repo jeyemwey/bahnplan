@@ -107,20 +107,6 @@ body {
 			    }
 			}
 
-			input {
-				&[type="text"], &[type="date"] {
-					padding: 1em 0.5em;
-					width: 100%;
-					box-sizing: border-box;
-				}
-
-				&#title {
-					font-size: 20px;
-				    font-weight: bolder;
-				    text-transform: capitalize;
-				}
-			}
-
 			ul#fellows {
 				padding-left: 0px;
 				margin: 0px;
@@ -180,7 +166,7 @@ body {
 		}
 	}
 
-	tr.text-right {
+	.text-right {
 		text-align: right;	
 		input {
 			margin-top: 2em;
@@ -188,7 +174,48 @@ body {
 			float: right;
 		}
 	}
-	input[type="submit"], button {
+	input {
+		&[type="text"], &[type="date"], &[type="password"] {
+			padding: 1em 0.5em;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		&#title {
+			font-size: 20px;
+		    font-weight: bolder;
+		    text-transform: capitalize;
+		}
+		
+		&[type="submit"] {
+			background-color: white;
+		}
+	}
+	button {
 		background-color: white;
+	}
+
+	form#login {
+		width: 100%;
+		max-width: 400px;
+		margin: 10em auto;
+		padding: 2em;
+		border: 1px solid $c-grey;
+		border-radius: .2em;
+		box-sizing: border-box;
+
+		div.field {
+			margin-top: 1em;
+
+			label {
+				font-weight: normal;
+				font-size: 1.2em;
+			}
+
+			input {
+				margin-top: 1em;
+				padding: 0.7em;
+			}
+		}			
 	}
 }

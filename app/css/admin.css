@@ -449,14 +449,6 @@ body {
           body table tr .action a i {
             color: #1D1D1D;
             padding-right: .5em; }
-      body table tr input[type="text"], body table tr input[type="date"] {
-        padding: 1em 0.5em;
-        width: 100%;
-        box-sizing: border-box; }
-      body table tr input#title {
-        font-size: 20px;
-        font-weight: bolder;
-        text-transform: capitalize; }
       body table tr ul#fellows {
         padding-left: 0px;
         margin: 0px; }
@@ -495,13 +487,39 @@ body {
         vertical-align: top;
         float: right;
         border: 1px solid #d5d5d5; }
-  body tr.text-right {
+  body .text-right {
     text-align: right; }
-    body tr.text-right input {
+    body .text-right input {
       margin-top: 2em;
       padding: 0.7em;
       float: right; }
-  body input[type="submit"], body button {
+  body input[type="text"], body input[type="date"], body input[type="password"] {
+    padding: 1em 0.5em;
+    width: 100%;
+    box-sizing: border-box; }
+  body input#title {
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: capitalize; }
+  body input[type="submit"] {
     background-color: white; }
+  body button {
+    background-color: white; }
+  body form#login {
+    width: 100%;
+    max-width: 400px;
+    margin: 10em auto;
+    padding: 2em;
+    border: 1px solid #d5d5d5;
+    border-radius: .2em;
+    box-sizing: border-box; }
+    body form#login div.field {
+      margin-top: 1em; }
+      body form#login div.field label {
+        font-weight: normal;
+        font-size: 1.2em; }
+      body form#login div.field input {
+        margin-top: 1em;
+        padding: 0.7em; }
 
 /*# sourceMappingURL=admin.css.map */
