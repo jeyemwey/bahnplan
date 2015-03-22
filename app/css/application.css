@@ -446,7 +446,7 @@ html, body {
             html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li {
               display: inline; }
               html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img {
-                width: 52px;
+                width: 48px;
                 border-radius: 0.2em; }
       html div.wrapper div#sidebar footer, body div.wrapper div#sidebar footer {
         font-family: "Roboto Slab";

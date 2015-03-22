@@ -65,6 +65,10 @@ body {
 			}
 			td.label {
 				width: 30%;
+
+				&.top {
+					vertical-align: top;
+				}
 			}
 			td#description-raw, td#description-markdown-interpreted {
 				width: 35%;
@@ -116,16 +120,56 @@ body {
 				    text-transform: capitalize;
 				}
 			}
+
+			ul#fellows {
+				padding-left: 0px;
+
+				li.fellow {
+				    list-style-type: none;
+				    border-bottom: 1px solid $c-grey;
+				    padding-bottom: 1em;
+				    margin-bottom: 1em;
+				
+					div.left-wrapper {
+						float: left;
+
+						img {
+							border-radius: .2em;
+							width: 48px;
+						}
+
+						span.name {
+						    line-height: 48px;
+						    display: inline-block;
+						    vertical-align: top;
+						}
+					}
+					div.button-wrapper {
+						button.delete {
+						    vertical-align: top;
+						    float: right;
+						
+						    height: 20px;
+							line-height: 17px;
+							margin-top: 15px;	
+							border: 0px;
+							font-size: 2em;
+						}
+					}
+				}
+			}
 		}
 	}
 
 	tr.text-right {
-		text-align: right;
-		input[type="submit"] {
+		text-align: right;	
+		input {
 			margin-top: 2em;
-			float: right;
 			padding: 0.7em;
-			background-color: white;
+			float: right;
 		}
+	}
+	input[type="submit"], button {
+		background-color: white;
 	}
 }

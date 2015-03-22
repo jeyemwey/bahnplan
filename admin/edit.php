@@ -56,5 +56,5 @@ include "partials/header.php";
 	<?= p($message) ?>
 </div>
 
-<?php include "partials/form.php" ?>
+<?php $in_edit = true; include "partials/form.php" ?>
 <?php include "partials/footer.php";

@@ -417,6 +417,8 @@ body {
         padding: 1em 0; }
       body table tr td.label {
         width: 30%; }
+        body table tr td.label.top {
+          vertical-align: top; }
       body table tr td#description-raw, body table tr td#description-markdown-interpreted {
         width: 35%; }
         body table tr td#description-raw textarea, body table tr td#description-markdown-interpreted textarea {
@@ -455,12 +457,37 @@ body {
         font-size: 20px;
         font-weight: bolder;
         text-transform: capitalize; }
+      body table tr ul#fellows {
+        padding-left: 0px; }
+        body table tr ul#fellows li.fellow {
+          list-style-type: none;
+          border-bottom: 1px solid #d5d5d5;
+          padding-bottom: 1em;
+          margin-bottom: 1em; }
+          body table tr ul#fellows li.fellow div.left-wrapper {
+            float: left; }
+            body table tr ul#fellows li.fellow div.left-wrapper img {
+              border-radius: .2em;
+              width: 48px; }
+            body table tr ul#fellows li.fellow div.left-wrapper span.name {
+              line-height: 48px;
+              display: inline-block;
+              vertical-align: top; }
+          body table tr ul#fellows li.fellow div.button-wrapper button.delete {
+            vertical-align: top;
+            float: right;
+            height: 20px;
+            line-height: 17px;
+            margin-top: 15px;
+            border: 0px;
+            font-size: 2em; }
   body tr.text-right {
     text-align: right; }
-    body tr.text-right input[type="submit"] {
+    body tr.text-right input {
       margin-top: 2em;
-      float: right;
       padding: 0.7em;
-      background-color: white; }
+      float: right; }
+  body input[type="submit"], body button {
+    background-color: white; }
 
 /*# sourceMappingURL=admin.css.map */
