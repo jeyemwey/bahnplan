@@ -1,9 +1,9 @@
 <?php
 
+session_start();
+
 //Autoload
-spl_autoload_register(function ($class) {
-    include 'inc/classes/' . $class . '.class.php';
-});
+include "classes/autoload.php";
 
 //p function
 function p(&$var, $else = '') {

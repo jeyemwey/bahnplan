@@ -37,8 +37,7 @@ include "inc/init.php";
 					ORDER BY t.date_start;");
 
 				$Markers = [];
-				$first = true;
-				while ($Trip = $Query->fetch_object("Trip")): 
+				while ($Trip = $Query->fetch_object("TripInMain")): 
 					include "app/partials/trip.php";
 
 					$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);

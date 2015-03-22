@@ -1,6 +1,7 @@
 @import "vars";
 @import "mixins";
 @import "normalize";
+@import "base";
 
 html, body {
 	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
@@ -24,20 +25,6 @@ html, body {
 
 			div#logo-wrapper {
 				@include border-bottom;
-
-				div#logo {
-				    width: 150px;
-				    margin: 0px 0px 0px 70px;
-
-				    h1 {
-					    font-family: "Helvetica Neue", Arial, sans-serif;
-					    font-weight: lighter;
-					    text-transform: uppercase;
-					    font-size: 26px;
-					    letter-spacing: -1px;
-					    text-align: center;
-					}
-				}
 			}
 
 			ul#trippoints {
@@ -47,7 +34,6 @@ html, body {
 				li.trip {
 					margin: 0px 0em 1em;
 					padding: 0px 1em 1em;
-
 
 					.collapse {
 						display: none;
@@ -106,7 +92,7 @@ html, body {
 						li {
 							display: inline;
 							img {
-								width: 52px;
+								width: 48px;
 								border-radius: 0.2em;
 							}
 						}

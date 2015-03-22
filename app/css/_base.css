@@ -1,0 +1,12 @@
+div#logo-wrapper div#logo {
+  width: 150px;
+  margin: 0px 0px 0px 70px; }
+  div#logo-wrapper div#logo h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: -1px;
+    text-align: center; }
+
+/*# sourceMappingURL=_base.css.map */

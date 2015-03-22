@@ -1,0 +1,221 @@
+@import "vars";
+@import "mixins";
+@import "normalize";
+@import "base";
+body {
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+	color: $c-default;
+
+	max-width: 1170px;
+	width: 100%;
+	margin: 0px auto;
+
+	nav {
+		@include border-bottom;
+		
+		div#logo-wrapper {
+			float: left;
+			div#logo {
+				margin-left: 0px;
+			}
+		}
+		ul {
+			@include destroy-list;
+			padding-left: 1em;
+
+			float: left;
+			line-height: 62px;
+			
+			li {
+				display: inline;
+				margin-left: 1em;
+				a {
+					color: $c-link;
+			    	text-decoration: none;
+				}
+			}
+		}
+	}
+
+	input, textarea {
+		border: 1px solid $c-grey;
+	}
+
+	#title {
+		h2 {
+			display: inline-block;
+			line-height: 1.5em;
+		}
+		code {
+			float: right;
+			line-height: 36px;
+			margin: 19px 0px;
+			font-size: 30px;
+			font-family: "Roboto Slab", "Georgia", "Times", sans-serif;
+		}
+	}
+	table {
+		width: 100%;
+
+		tr {
+			@include border-bottom;
+
+			th, td {
+				padding: 1em 0;
+			}
+			td.label {
+				width: 30%;
+
+				&.top {
+					vertical-align: top;
+				}
+			}
+			td#description-raw, td#description-markdown-interpreted {
+				width: 35%;
+
+				textarea {
+					@include userwrittencontent;
+					padding: 1em 0.5em;
+					width: 100%;
+					box-sizing: border-box;
+					border: 1px solid $c-grey;
+				}
+			}
+			td#description-markdown-interpreted {
+				padding: .5em 1em;
+				vertical-align: top;
+			}
+
+
+			.title {
+			    width: 30%;
+			}
+
+			.dates {
+			    width: 200px;
+			}
+			
+			.action {
+			    width: 100px;
+			    a {
+			    	color: $c-link;
+			    	text-decoration: none;
+			    	i {
+			    		color: $c-default;
+			    		padding-right: .5em;
+			    	}
+			    }
+			}
+
+			ul#fellows {
+				padding-left: 0px;
+				margin: 0px;
+
+				li.fellow {
+				    list-style-type: none;
+				    border-bottom: 1px solid $c-grey;
+				    padding-bottom: 1em;
+				    margin-bottom: 1em;
+				
+					div.left-wrapper {
+						float: left;
+
+						img {
+							border-radius: .2em;
+							width: 48px;
+						}
+
+						span.name {
+						    line-height: 48px;
+						    display: inline-block;
+						    vertical-align: top;
+						    padding-left: 0.5em;
+						}
+					}
+					div.button-wrapper {
+						a.delete {
+						    vertical-align: top;
+						    float: right;
+						
+						    height: 20px;
+							line-height: 17px;
+							margin-top: 15px;	
+							border: 0px;
+							font-size: 2em;
+						}
+					}
+				}
+			}
+			strong#no-fellows-found {
+				display: none;
+				margin: 1em 0px;
+			}
+			div#new-fellow {
+				input {
+					width: calc(100% - 100px);
+				}
+				button {
+					width: 75px;
+					height: 53px;
+					line-height: 53px;
+					vertical-align: top;
+					float: right;
+					border: 1px solid $c-grey;
+				}
+			}
+		}
+	}
+
+	.text-right {
+		text-align: right;	
+		input {
+			margin-top: 2em;
+			padding: 0.7em;
+			float: right;
+		}
+	}
+	input {
+		&[type="text"], &[type="date"], &[type="password"] {
+			padding: 1em 0.5em;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		&#title {
+			font-size: 20px;
+		    font-weight: bolder;
+		    text-transform: capitalize;
+		}
+		
+		&[type="submit"] {
+			background-color: white;
+		}
+	}
+	button {
+		background-color: white;
+	}
+
+	form#login {
+		width: 100%;
+		max-width: 400px;
+		margin: 10em auto;
+		padding: 2em;
+		border: 1px solid $c-grey;
+		border-radius: .2em;
+		box-sizing: border-box;
+
+		div.field {
+			margin-top: 1em;
+
+			label {
+				font-weight: normal;
+				font-size: 1.2em;
+			}
+
+			input {
+				margin-top: 1em;
+				padding: 0.7em;
+			}
+		}			
+	}
+}
