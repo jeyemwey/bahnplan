@@ -33,7 +33,8 @@ include "inc/init.php";
 					GROUP_CONCAT(DISTINCT CAST(f.twittername AS CHAR)) AS twitternames,
 					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
 					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
-					GROUP BY t.id");
+					GROUP BY t.id
+					ORDER BY t.date_start;");
 
 				$Markers = [];
 				while ($Trip = $Query->fetch_object("TripInMain")): 
@@ -73,7 +74,7 @@ include "inc/init.php";
 
 
 				//Onclick
-				$(".collapse").on("show.bs.collapse", function() {
+				$(".collapse").on("shown.bs.collapse", function() {
 					var lat = $(this).data("lat");
 					var lng = $(this).data("lng");
 
@@ -96,7 +97,6 @@ include "inc/init.php";
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app/js/app.js"></script>
 </body>
 </html>
 <?php include "inc/die.php"; ?>
