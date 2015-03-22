@@ -473,7 +473,7 @@ body {
               line-height: 48px;
               display: inline-block;
               vertical-align: top; }
-          body table tr ul#fellows li.fellow div.button-wrapper button.delete {
+          body table tr ul#fellows li.fellow div.button-wrapper a.delete {
             vertical-align: top;
             float: right;
             height: 20px;

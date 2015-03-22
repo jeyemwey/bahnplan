@@ -13,7 +13,7 @@
 						<span class="name"><?= $fellow["twittername"] ?></span>
 					</div>
 					<div class="button-wrapper">
-						<button class="delete">&times;</button>
+						<a class="delete" data-id="<?= $fellow["id"] ?>">&times;</a>
 					</div>
 				</li>
 				<?php
@@ -26,5 +26,23 @@
 			<?php
 		endif;
 		?>
+
+		<script type="text/javascript">
+			$("a.delete").on("click", function() {
+				var id = $(this).data("id");
+				var request = {
+					id: id
+				};
+				$.ajax({
+					type: "POST",
+					url: 'fellow/delete.php',
+					data: request,
+					success: function(jsonstring) {
+						console.log(jsonstring);
+						$("li[data-id='" + id + "']").hide();
+					}
+				});
+			});
+		</script>
 	</td>
 </tr>
