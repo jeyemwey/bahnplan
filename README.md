@@ -17,6 +17,10 @@ In order to grab data from Twitter (eg avatar pictures), Twitter requires you to
  * property: `twitter_my_token` with content: __Access Token__
  * property: `twitter_my_secret` with content: __Access Token Secret__ 
 
+## Access
+
+You can access *admin/* with credentials: `jannik` : `123456`.
+
 ## Makes use of:
 
 * scss

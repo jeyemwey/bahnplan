@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //Autoload
 include "classes/autoload.php";
 

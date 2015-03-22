@@ -1,6 +1,11 @@
 <?php
 if (!isset($feonly)):
 	include "../inc/init.php";
+
+	$me = new User($mysqli);
+	if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
+		header("Location: login.php");
+	}
 endif;
 ?>
 <!DOCTYPE html>
@@ -26,5 +31,6 @@ endif;
 			<li><a href="index.php">Alle Reisen</a></li>
 			<li><a href="new.php">Neue Reise</a></li>
 			<li><a href="../" target="_blank">Zur Webseite</a></li>
+			<li><a href="logout.php">Logout</a></li>
 		</ul>	
 	</nav>

@@ -2,6 +2,11 @@
 
 include "../inc/init.php";
 
+$me = new User($mysqli);
+if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
+	header("Location: login.php");
+}
+
 //Get the ID
 $id = (int) $_GET['trip_id'];
 
