@@ -9,20 +9,18 @@ class Address {
 	public function __construct($Address_ = "") {
 		if(!empty($Address_)) {
 			$this->Address = $Address_;
-
-			$this->getLatLng();
 		}
 	}
 
-	private function getLatLng() {
-		echo $Address = urlencode($this->Address);
+	public function getLatLng() {
+		$Address = urlencode($this->Address);
 		$call = file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?address=". $Address . "&sensor=false");
 
 		$result = json_decode($call);
 
 		$geometry = $result->results[0]->geometry->location;
 
-		echo $this->Lat = $geometry->lat;
-		echo $this->Lng = $geometry->lng;
+		$this->Lat = $geometry->lat;
+		$this->Lng = $geometry->lng;
 	}
 }

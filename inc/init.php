@@ -1,11 +1,6 @@
 <?php
 //Autoload
-spl_autoload_register(function ($class) {
-	if (ADMIN)
-		include '../inc/classes/' . $class . '.class.php';
-	else
-    	include 'inc/classes/' . $class . '.class.php';
-});
+include "classes/autoload.php";
 
 //p function
 function p(&$var, $else = '') {

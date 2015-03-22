@@ -400,6 +400,15 @@ body {
           text-decoration: none; }
   body input, body textarea {
     border: 1px solid #d5d5d5; }
+  body #title h2 {
+    display: inline-block;
+    line-height: 1.5em; }
+  body #title code {
+    float: right;
+    line-height: 36px;
+    margin: 19px 0px;
+    font-size: 30px;
+    font-family: "Roboto Slab", "Georgia", "Times", sans-serif; }
   body table {
     width: 100%; }
     body table tr {

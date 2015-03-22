@@ -1,6 +1,5 @@
 <?php
 
-define("ADMIN", TRUE);
 include "../inc/init.php";
 
 //Get the ID

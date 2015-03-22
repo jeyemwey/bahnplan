@@ -1,5 +1,4 @@
 <?php
-define("ADMIN", FALSE);
 include "inc/init.php";
 ?>
 <!DOCTYPE html>

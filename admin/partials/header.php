@@ -1,6 +1,5 @@
 <?php
 if (!isset($feonly)):
-	define("ADMIN", TRUE);
 	include "../inc/init.php";
 endif;
 ?>
@@ -13,7 +12,7 @@ endif;
 	<link rel="stylesheet" type="text/css" href="../app/css/admin.css" />
 	<link rel="stylesheet" type="text/css" href="../app/css/font-awesome.min.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+	
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
