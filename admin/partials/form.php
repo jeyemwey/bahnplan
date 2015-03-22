@@ -40,6 +40,7 @@
 			<td class="label"><label for="address">Adresse für den Marker:</label></td>
 			<td colspan="2"><input type="text" name="address" id="address" value="<?= p($Address->Address) ?>" /></td>
 		</tr>
+		<?php if (p($in_edit)) include "fellow-ajax.php"; ?>
 		<tr class="text-right">
 			<td colspan="3"><input type="submit" name="submit" value="Reise einspeichern" /></td>
 		</tr>
