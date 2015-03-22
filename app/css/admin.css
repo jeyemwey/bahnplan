@@ -458,7 +458,8 @@ body {
         font-weight: bolder;
         text-transform: capitalize; }
       body table tr ul#fellows {
-        padding-left: 0px; }
+        padding-left: 0px;
+        margin: 0px; }
         body table tr ul#fellows li.fellow {
           list-style-type: none;
           border-bottom: 1px solid #d5d5d5;
@@ -482,6 +483,9 @@ body {
             margin-top: 15px;
             border: 0px;
             font-size: 2em; }
+      body table tr strong#no-fellows-found {
+        display: none;
+        margin: 1em 0px; }
       body table tr div#new-fellow input {
         width: calc(100% - 100px); }
       body table tr div#new-fellow button {
