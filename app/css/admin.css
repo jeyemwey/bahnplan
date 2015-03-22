@@ -472,7 +472,8 @@ body {
             body table tr ul#fellows li.fellow div.left-wrapper span.name {
               line-height: 48px;
               display: inline-block;
-              vertical-align: top; }
+              vertical-align: top;
+              padding-left: 0.5em; }
           body table tr ul#fellows li.fellow div.button-wrapper a.delete {
             vertical-align: top;
             float: right;
@@ -481,6 +482,15 @@ body {
             margin-top: 15px;
             border: 0px;
             font-size: 2em; }
+      body table tr div#new-fellow input {
+        width: calc(100% - 100px); }
+      body table tr div#new-fellow button {
+        width: 75px;
+        height: 53px;
+        line-height: 53px;
+        vertical-align: top;
+        float: right;
+        border: 1px solid #d5d5d5; }
   body tr.text-right {
     text-align: right; }
     body tr.text-right input {

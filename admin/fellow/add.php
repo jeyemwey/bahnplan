@@ -8,6 +8,7 @@ header('Content-Type: application/json');
 //Grab Things
 $Trip = (int) p($_POST['trip_id']);
 $Twittername = (string) p($_POST['twittername']);
+$Twittername = strtolower($Twittername);
 
 if(empty($Trip) OR empty($Twittername)) {
 	$return["error"] = 406;

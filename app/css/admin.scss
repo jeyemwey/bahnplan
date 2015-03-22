@@ -142,6 +142,7 @@ body {
 						    line-height: 48px;
 						    display: inline-block;
 						    vertical-align: top;
+						    padding-left: 0.5em;
 						}
 					}
 					div.button-wrapper {
@@ -156,6 +157,19 @@ body {
 							font-size: 2em;
 						}
 					}
+				}
+			}
+			div#new-fellow {
+				input {
+					width: calc(100% - 100px);
+				}
+				button {
+					width: 75px;
+					height: 53px;
+					line-height: 53px;
+					vertical-align: top;
+					float: right;
+					border: 1px solid $c-grey;
 				}
 			}
 		}
