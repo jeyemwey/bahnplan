@@ -1,9 +1,17 @@
 <?php
+header('Content-Type: application/json');
+
 include "../../inc/init.php";
+
+$me = new User($mysqli);
+if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
+	die(json_encode([
+		"error" => 400
+	]));
+}
 
 //Build Return
 $return = [];
-header('Content-Type: application/json');
 
 //Grab Things
 $Trip = (int) p($_POST['trip_id']);

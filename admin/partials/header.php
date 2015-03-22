@@ -1,6 +1,11 @@
 <?php
 if (!isset($feonly)):
 	include "../inc/init.php";
+
+	$me = new User($mysqli);
+	if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
+		header("Location: login.php");
+	}
 endif;
 ?>
 <!DOCTYPE html>
