@@ -31,6 +31,7 @@ You can access *admin/* with credentials: `jannik` : `123456`.
 * Parsedown
 * [p](https://gist.github.com/jeyemwey/08aaf0d57fbd67c5a798)
 * Codebird-PHP
+* [AJAXload](http://www.ajaxload.info/)
 
 ## Thanks to
 

@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" onkeypress="return event.keyCode != 13;">
 	<table>
 		<tr>
 			<td class="label"><label for="title">Ziel der Reise:</label></td>
