@@ -8,6 +8,7 @@ class Config {
 	protected $default = null;
 
 	public function __construct($file) {
+		$this->data = $file;
 	}
 
 	public function get($key, $default = null) {
