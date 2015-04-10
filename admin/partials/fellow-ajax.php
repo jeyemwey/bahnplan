@@ -32,6 +32,7 @@
 		</div>
 		<script type="text/javascript">
 			$("a.delete").on("click", function() {
+				$(this).html("<img src=\"../app/img/ajax-load-circle.gif\" alt=\"Waiting\">");
 				var id = $(this).data("id");
 				var request = {
 					id: id
@@ -41,7 +42,9 @@
 					url: 'fellow/delete.php',
 					data: request,
 					success: function(jsonstring) {
+						$(this).html("&times;");
 						console.log(jsonstring);
+						
 						$("li[data-id='" + id + "']").hide();
 						$("li[data-id='" + id + "']").data("deleted", "true");
 
@@ -58,7 +61,25 @@
 				});
 			});
 
-			$("button#new-fellow-button").on("click", function() {
+			
+			//Click onto submit
+				$("button#new-fellow-button").on("click", function() { addNewFellow(); });
+
+			//ENTER THING FROM http://stackoverflow.com/a/6524335/3944068
+				$('input#twittername').bind("enterKey",function() {
+				   addNewFellow(); 
+				});
+				$('input#twittername').keyup(function(e) {
+				    if(e.keyCode == 13) {
+				    	e.preventDefault();
+				        $(this).trigger("enterKey");
+				    }
+				});
+
+			//The original function!
+			var addNewFellow = function() {
+				$("#new-fellow-button").html("<img src=\"../app/img/ajax-load-vertical.gif\" alt=\"Waiting\">");
+
 				var request = {
 					trip_id: <?= $id ?>,
 					twittername: $("#twittername").val()
@@ -68,7 +89,9 @@
 					url: 'fellow/add.php',
 					data: request,
 					success: function(giveback) {
+						$("#new-fellow-button").html("Anlegen");
 						console.log(giveback);
+						
 						$("strong#no-fellows-found").css("display", "none");
 						$("ul#fellows").append("<li class=\"fellow clearfix\" data-id=\"" + giveback.id + "\"><div class=\"left-wrapper\">" +
 							"<img class=\"name\" src=\"" + giveback.avatar_url + "\" />" +
@@ -81,7 +104,7 @@
 						$("#twittername").removeAttr('value');
 					}
 				});
-			});
+			}
 		</script>
 	</td>
 </tr>
