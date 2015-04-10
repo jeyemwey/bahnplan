@@ -1,5 +1,5 @@
-<li class="trip">
-	<a data-toggle="collapse" data-parent="#accordion" href="#collapse-<?= $Trip->id ?>">
+<li class="trip" data-parent="#accordion">
+	<a data-toggle="collapse" href="#collapse-<?= $Trip->id ?>">
 		<span class="dest"><?= $Trip->Title ?></span>
 		<span class="time clearfix">
 			<?php
