@@ -15,18 +15,7 @@ function p(&$var, $else = '') {
 $app = new Config(require "Configuration.php");
 
 //MySQLI-Connection
-$mysqli = new MySQLi("localhost", "root", "", "bahnplan") or die($mysqli->error);
+$mysqli = new MySQLi($app->get("db.host"), $app->get("db.user"), $app->get("db.pass"), $app->get("db.db")) or die($mysqli->error);
 
 //Create Parsedown instance
 $Parsedown = new Parsedown();
-
-//Load Page Infos
-function page_information($mysqli) {
-	$query = $mysqli->query("SELECT property, content FROM infos") or die($mysqli->error());
-	$properties = array();
-	while($row = $query->fetch_assoc()) {
-		$properties[$row['property']] = $row['content'];
-	}
-	return $properties;
-}
-$page = page_information($mysqli);

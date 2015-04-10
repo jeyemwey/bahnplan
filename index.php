@@ -6,7 +6,7 @@ include "inc/init.php";
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?= p($page['title']); ?></title>
+	<title><?= $app->get("site.name") ?></title>
 	<link rel="stylesheet" type="text/css" href="app/css/application.css" />
 	<link rel="stylesheet" type="text/css" href="app/css/font-awesome.min.css" />
 
@@ -17,7 +17,7 @@ include "inc/init.php";
 		<div id="sidebar">
 			<div id="logo-wrapper">
 				<div id="logo">
-					<h1><i class="fa fa-train"></i> <?= p($page['title']); ?></h1>
+					<h1><i class="fa fa-train"></i> <?= $app->get("site.name") ?></h1>
 				</div>
 			</div>
 			<ul id="trippoints" id="accordion">
@@ -45,7 +45,7 @@ include "inc/init.php";
 
 				?>
 			</ul>
-			<footer><?= $Parsedown->text(p($page["footer"])); ?></footer>
+			<footer><?= $Parsedown->text($app->get("site.footer")); ?></footer>
 		</div>
 		<div id="map_canvas">
 			<script type="text/javascript">

@@ -22,9 +22,9 @@ if(empty($Trip) OR empty($Twittername)) {
 	$return["error"] = 406;
 } else {
 	//Get Avatar
-	Codebird::setConsumerKey($page["twitter_app_key"], $page["twitter_app_secret"]);
+	Codebird::setConsumerKey($app->get("twitter.app.key"), $app->get("twitter.app.secret"));
 	$cb = Codebird::getInstance();
-	$cb->setToken($page["twitter_my_token"], $page["twitter_my_secret"]);
+	$cb->setToken($app->get("twitter.user.token"), $app->get("twitter.user.secret"));
 	$Avatar = $cb->users_show("screen_name=" . $Twittername)->profile_image_url;
 	
 	//Write to DB
