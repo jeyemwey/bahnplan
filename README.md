@@ -32,6 +32,7 @@ You can access *admin/* with credentials: `jannik` : `123456`.
 * [p](https://gist.github.com/jeyemwey/08aaf0d57fbd67c5a798)
 * Codebird-PHP
 * [AJAXload](http://www.ajaxload.info/)
+* [Config Class](https://www.youtube.com/watch?v=qyKt4NF_82g)
 
 ## Thanks to
 
