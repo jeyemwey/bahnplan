@@ -11,6 +11,9 @@ function p(&$var, $else = '') {
 	return $var;
 }
 
+//load app config
+$app = new Config(require "Configuration.php");
+
 //MySQLI-Connection
 $mysqli = new MySQLi("localhost", "root", "", "bahnplan") or die($mysqli->error);
 
