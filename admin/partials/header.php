@@ -13,7 +13,7 @@ endif;
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?= p($page['title']); ?> &mdash; Admin</title>
+	<title><?= $app->get("site.name") ?> &mdash; Admin</title>
 	<link rel="stylesheet" type="text/css" href="../app/css/admin.css" />
 	<link rel="stylesheet" type="text/css" href="../app/css/font-awesome.min.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -24,7 +24,7 @@ endif;
 	<nav class="clearfix">
 		<div id="logo-wrapper">
 			<div id="logo">
-				<h1><i class="fa fa-train"></i> <?= p($page['title']); ?></h1>
+				<h1><i class="fa fa-train"></i> <?= $app->get("site.name") ?></h1>
 			</div>
 		</div>		
 		<ul>

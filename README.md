@@ -3,19 +3,40 @@
 Place to share my travel plans.
 
 ## Set up
+
+In the folder `inc`, you can find a file called `Configuration.sample.php`. Duplicate it and delete ".sample", so you have `Configuration.php`. In there, you can find some default database config:
+
+	"db" => [
+		"host" => "localhost",
+		"user" => "root",
+		"pass" => "",
+		"db" => "bahnplan"
+	]
+
+Change this to your database config. At this point, you may also change the other things as you surely don't want to promote my Travel plans, but your own. `footer` supports markdown. Please enclosure all `"` with backslashes (`\`).
+
+### Twitter
+
 In order to grab data from Twitter (eg avatar pictures), Twitter requires you to create an **application** at [apps.twitter.com](https://apps.twitter.com/). You'll have to do the following steps:
 
 1. Create an app (name it whatever you want).
 2. Change the __Access Level__ to "Read and write".
 3. Create yourself an Access Token in the "*Keys and Access Tokens*"-tab. You will find that button on the bottom of the page.
-4. Go into your database management system and create new datasets for the table `infos`. 
-  
-   Create four new datasets:
+4. Then open your `Configuration.php` and change the following code:
 
- * property: `twitter_app_key` with content: __Consumer Key (API Key)__ from the table at Twitter 
- * property: `twitter_app_secret` with content: __Consumer Secret (API Secret)__
- * property: `twitter_my_token` with content: __Access Token__
- * property: `twitter_my_secret` with content: __Access Token Secret__ 
+
+	"twitter" => [
+		"app" => [
+			"key" => "YOUR_APP_KEY",
+			"secret" => "YOUR_APP_SECRET"
+		],
+		"user" => [
+			"token" => "YOUR_USER_TOKEN",
+			"secret" => "YOUR_USER_SECRET"
+		]
+	]
+
+Change the things to the stuff you have from Twitter.
 
 ## Access
 
@@ -32,6 +53,7 @@ You can access *admin/* with credentials: `jannik` : `123456`.
 * [p](https://gist.github.com/jeyemwey/08aaf0d57fbd67c5a798)
 * Codebird-PHP
 * [AJAXload](http://www.ajaxload.info/)
+* [Config Class](https://www.youtube.com/watch?v=qyKt4NF_82g)
 
 ## Thanks to
 
