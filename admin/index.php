@@ -32,4 +32,18 @@
 	endwhile;
 	?>
 </table>
+<button id="update-avatars">Update Avatars</button>
+<script type="text/javascript">
+	$("button#update-avatars").on("click", function() {
+		$(this).html("<img src=\"../app/img/ajax-load-circle.gif\" alt=\"Waiting\">");
+		$.ajax({
+			type: "GET",
+			url: 'fellow/update.php',
+			success: function(giveback) {
+				$("button#update-avatars").html("Avatare updaten");
+				console.log(giveback);
+			}
+		});			
+	});
+</script>
 <?php include "partials/footer.php"; ?>

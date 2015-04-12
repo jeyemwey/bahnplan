@@ -495,4 +495,17 @@ html, body {
 ::selection {
   background: #f9f9bb; }
 
+@media screen and (max-width: 466px) {
+  #sidebar {
+    width: 100% !important; }
+
+  #map_canvas {
+    display: none !important; }
+
+  ul.friends li:first-child {
+    padding-left: 0px !important; }
+  ul.friends li:nth-child(4n):after {
+    content: "" !important;
+    display: none !important; } }
+
 /*# sourceMappingURL=application.css.map */

@@ -398,8 +398,13 @@ body {
         body nav ul li a {
           color: #3DAEF5;
           text-decoration: none; }
-  body input, body textarea {
+  body button, body input, body textarea {
     border: 1px solid #d5d5d5; }
+  body button#update-avatars {
+    margin-top: 1.5em;
+    float: right;
+    padding: 0.5em 1em;
+    width: 10em; }
   body #title h2 {
     display: inline-block;
     line-height: 1.5em; }
