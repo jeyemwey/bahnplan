@@ -98,7 +98,7 @@ html, body {
 							&:first-child {
 								padding-left: 0.3em;
 							}
-							
+
 							&:last-child {
 								padding-right: 0px;
 							}
@@ -149,3 +149,22 @@ html, body {
 
 ::-moz-selection { background: $c-highlight; }
 ::selection { background: $c-highlight; }
+
+@media screen and (max-width: 466px) {
+	#sidebar {
+		width: 100% !important;
+	}
+
+	#map_canvas {
+		display: none !important;
+	}
+	ul.friends li {
+		&:first-child {
+			padding-left: 0px !important;
+		}
+		&:nth-child(4n):after {
+			content: "" !important;
+			display: none !important;
+		}
+	}
+}
