@@ -6,12 +6,14 @@ Place to share my travel plans.
 
 In the folder `inc`, you can find a file called `Configuration.sample.php`. Duplicate it and delete ".sample", so you have `Configuration.php`. In there, you can find some default database config:
 
-	"db" => [
-		"host" => "localhost",
-		"user" => "root",
-		"pass" => "",
-		"db" => "bahnplan"
-	]
+```
+"db" => [
+	"host" => "localhost",
+	"user" => "root",
+	"pass" => "",
+	"db" => "bahnplan"
+]
+```
 
 Change this to your database config. At this point, you may also change the other things as you surely don't want to promote my Travel plans, but your own. `footer` supports markdown. Please enclosure all `"` with backslashes (`\`).
 
@@ -24,17 +26,18 @@ In order to grab data from Twitter (eg avatar pictures), Twitter requires you to
 3. Create yourself an Access Token in the "*Keys and Access Tokens*"-tab. You will find that button on the bottom of the page.
 4. Then open your `Configuration.php` and change the following code:
 
-
-	"twitter" => [
-		"app" => [
-			"key" => "YOUR_APP_KEY",
-			"secret" => "YOUR_APP_SECRET"
-		],
-		"user" => [
-			"token" => "YOUR_USER_TOKEN",
-			"secret" => "YOUR_USER_SECRET"
-		]
+```
+"twitter" => [
+	"app" => [
+		"key" => "YOUR_APP_KEY",
+		"secret" => "YOUR_APP_SECRET"
+	],
+	"user" => [
+		"token" => "YOUR_USER_TOKEN",
+		"secret" => "YOUR_USER_SECRET"
 	]
+]
+```
 
 Change the things to the stuff you have from Twitter.
 
