@@ -91,9 +91,40 @@ html, body {
 						@include destroy-list;
 						li {
 							display: inline;
-							img {
+							
+							padding-right: 0.3em;
+							padding-bottom: 0.3em;
+							
+							&:first-child {
+								padding-left: 0.3em;
+							}
+							
+							&:last-child {
+								padding-right: 0px;
+							}
+							
+							&.hidden {
+								display: none;
+							}
+							&:nth-child(4n) {
+								@include clearfix;
+							}
+							
+							.box {
 								width: 48px;
 								border-radius: 0.2em;
+								height: 48px;
+							}
+							&.get-more {
+							    line-height: 48px;
+							
+								.get-more-box.fa.fa-ellipsis-h {
+									line-height: 48px;
+								    vertical-align: top;
+								    text-align: center;
+								    background-color: $c-default;
+								    color: white;
+								}
 							}
 						}
 					}

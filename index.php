@@ -20,7 +20,7 @@ include "inc/init.php";
 					<h1><i class="fa fa-train"></i> <?= $app->get("site.name") ?></h1>
 				</div>
 			</div>
-			<ul id="trippoints" id="accordion">
+			<ul id="trippoints" class="accordion-group">
 				<?php
 				$Query = $mysqli->query("SELECT 
 					t.id AS id, 
@@ -37,8 +37,10 @@ include "inc/init.php";
 					ORDER BY t.date_start;");
 
 				$Markers = [];
+				$first = true;
 				while ($Trip = $Query->fetch_object("TripInMain")): 
 					include "app/partials/trip.php";
+					$first = false;
 
 					$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);
 				endwhile;
@@ -74,20 +76,25 @@ include "inc/init.php";
 
 
 				//Onclick
+				$(".collapse").on("show.bs.collapse", function() {
+					$(".collapse").filter(".in").collapse("hide");
+				});
 				$(".collapse").on("shown.bs.collapse", function() {
 					var lat = $(this).data("lat");
 					var lng = $(this).data("lng");
 
 					console.log(lat + lng);
 
-					$(".collapse:not(#" + $(this).attr("id") + ")").collapse("hide");
-
-
 					//set Map Center
 					map.setZoom(10);
   					map.setCenter(new google.maps.LatLng(lat, lng));
 				});
 
+				//Show more Tweeps
+				$(".get-more").on("click", function() {
+					$(this).parent().children().removeClass("hidden");
+					$(this).addClass("hidden");
+				});
 			}
 
 			window.onload = initialize;

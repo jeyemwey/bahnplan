@@ -7,12 +7,17 @@
 	border-bottom: 1px solid $c-grey;
 }
 
-.clearfix:after {
-    content: ".";
-    clear: both;
-    display: block;
-    visibility: hidden;
-    height: 0px;
+@mixin clearfix {
+	&:after {
+	    content: ".";
+	    clear: both;
+	    display: block;
+	    visibility: hidden;
+	    height: 0px;
+	}
+}
+.clearfix {
+	@include clearfix;
 }
 
 @mixin userwrittencontent {

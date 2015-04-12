@@ -444,10 +444,33 @@ html, body {
             padding: 0px;
             list-style-type: none; }
             html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li {
-              display: inline; }
-              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li img {
+              display: inline;
+              padding-right: 0.3em;
+              padding-bottom: 0.3em; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:first-child, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:first-child {
+                padding-left: 0.3em; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:last-child, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:last-child {
+                padding-right: 0px; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.hidden, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.hidden {
+                display: none; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:nth-child(4n):after, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li:nth-child(4n):after {
+                content: ".";
+                clear: both;
+                display: block;
+                visibility: hidden;
+                height: 0px; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li .box, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li .box {
                 width: 48px;
-                border-radius: 0.2em; }
+                border-radius: 0.2em;
+                height: 48px; }
+              html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.get-more, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.get-more {
+                line-height: 48px; }
+                html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.get-more .get-more-box.fa.fa-ellipsis-h, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li.get-more .get-more-box.fa.fa-ellipsis-h {
+                  line-height: 48px;
+                  vertical-align: top;
+                  text-align: center;
+                  background-color: #1D1D1D;
+                  color: white; }
       html div.wrapper div#sidebar footer, body div.wrapper div#sidebar footer {
         font-family: "Roboto Slab";
         border: 0px;
