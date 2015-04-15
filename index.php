@@ -95,6 +95,9 @@ include "inc/init.php";
 					$(this).parent().children().removeClass("hidden");
 					$(this).addClass("hidden");
 				});
+
+				//Be-A-Part-Tooltip
+				$(".be-a-part-box").tooltip();
 			}
 
 			window.onload = initialize;

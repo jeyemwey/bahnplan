@@ -2,6 +2,7 @@
 @import "mixins";
 @import "normalize";
 @import "base";
+@import "bootstrap";
 
 html, body {
 	font-family: "Roboto", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
@@ -108,23 +109,27 @@ html, body {
 							}
 							&:nth-child(4n) {
 								@include clearfix;
-							}
+							}	
 							
 							.box {
 								width: 48px;
 								border-radius: 0.2em;
 								height: 48px;
+								line-height: 48px;
+							    vertical-align: top;
+							    text-align: center;
+							    color: white;
 							}
-							&.get-more {
-							    line-height: 48px;
-							
-								.get-more-box.fa.fa-ellipsis-h {
-									line-height: 48px;
-								    vertical-align: top;
-								    text-align: center;
-								    background-color: $c-default;
-								    color: white;
-								}
+							img {
+								margin-bottom: 0.3em;
+							}
+							.get-more-box {
+							    background-color: $c-default;
+							}
+							.be-a-part-box {
+								background-color: #55acee; //Twitter Branc Color
+								font-size: 1.4em;
+								margin-left: -0.2em;
 							}
 						}
 					}

@@ -22,15 +22,16 @@
 			$count = 1;
 			foreach ($Trip->Friends as $Name => $URL) : 
 				?><li data-count="<?= $count; ?>"
-					<?php echo (($count > 3) AND (count($Trip->Friends) > 4)) ? "class=\"to-be-hidden hidden\"" : ""; ?>
+					<?php echo (($count > 2) AND (count($Trip->Friends) > 3)) ? "class=\"to-be-hidden hidden\"" : ""; ?>
 					><img class="box" src="<?= $URL ?>" alt="<?= $Name ?>" /></li><?php
 				$count++;
 			endforeach;
 
-			if (count($Trip->Friends) > 4): 
+			if (count($Trip->Friends) > 3): 
 				?><li class="get-more"><div class="get-more-box box fa fa-ellipsis-h"></div></li><?php
 			endif;
 			?>
+				<li class="be-a-part"><a class="be-a-part-box box fa fa-twitter" data-toggle="tooltip" title="Fahre mit nach <?= $Trip->Title ?>"></a></li>
 			</ul>
 		<?php endif; ?>
 	</div>
