@@ -3,3 +3,4 @@ inc/Configuration.php
 ##SASS
 .sass-cache
 *.css.map
+*.map

@@ -1,4 +1,8 @@
-<?php include "partials/header.php"; ?>
+<?php
+include "partials/header.php";
+
+$prev = isset($_GET["prev"]);
+?>
 <table id="list-all">
 	<tr>
 		<th class="title">Ziel</th>
@@ -7,7 +11,7 @@
 		<th class="action">Aktion</th>
 	</tr>
 	<?php
-	$Query = $mysqli->query("SELECT * FROM trips");
+	$Query = $mysqli->query("SELECT * FROM trips WHERE " . (($prev) ? "date_start <=" : " date_end >=") . " now() ORDER BY date_start ASC") or die($mysqli->error);
 	while ($Trip = $Query->fetch_object("Trip")): 
 		?>
 		<tr>
@@ -32,6 +36,15 @@
 	endwhile;
 	?>
 </table>
+<?php if($prev): ?>
+	<a href="index.php">
+		<button class="left" id="show-prev">Zeige nächste Reisen</button>
+	</a>
+<?php else: ?>
+	<a href="index.php?prev">
+		<button class="left" id="show-prev">Zeige vergangene Reisen</button>
+	</a>
+<?php endif; ?>
 <button id="update-avatars">Update Avatars</button>
 <script type="text/javascript">
 	$("button#update-avatars").on("click", function() {

@@ -400,11 +400,15 @@ body {
           text-decoration: none; }
   body button, body input, body textarea {
     border: 1px solid #d5d5d5; }
-  body button#update-avatars {
+  body button {
     margin-top: 1.5em;
-    float: right;
-    padding: 0.5em 1em;
-    width: 10em; }
+    padding: 0.5em 1em; }
+    body button#show-prev {
+      width: 15em;
+      color: #1D1D1D; }
+    body button#update-avatars {
+      float: right;
+      width: 10em; }
   body #title h2 {
     display: inline-block;
     line-height: 1.5em; }
