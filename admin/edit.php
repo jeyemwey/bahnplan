@@ -12,6 +12,8 @@ $id = (int) p($_GET["trip_id"]);
 if(isset($_POST["submit"])) {
 
 	$Title = mysql_real_escape_string(htmlentities($_POST["title"]));
+	$status = (!empty(p($_POST['status']))) ? "true" : "false";
+
 	$date_start = new DateTime($_POST["date_start"]);
 	$date_end = new DateTime($_POST["date_end"]);
 	$Description = mysql_real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
@@ -20,6 +22,7 @@ if(isset($_POST["submit"])) {
 
 	$sql = "UPDATE trips SET
 		Title = '{$Title}',
+		status = {$status},
 		date_start = '{$date_start->format("Y-m-d H:i:s")}',
 		date_end = '{$date_end->format("Y-m-d H:i:s")}',
 		marker_address = '{$Address->Address}',
@@ -40,6 +43,7 @@ if(isset($_GET["trip_id"]) AND ((int) $_GET["trip_id"]) != 0) {
 	$Trip = $Query->fetch_assoc();
 
 	$Title = $Trip["Title"];
+	$status = $Trip["status"];
 	$date_start = new DateTime($Trip["date_start"]);
 	$date_end = new DateTime($Trip["date_end"]);
 	$Description = $Trip["Description"];

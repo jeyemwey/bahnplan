@@ -6,6 +6,7 @@
 		</tr>
 		<tr>
 			<td class="label"><label for="status">Status:</label></td>
+			<td colspan="2"><input type="checkbox" name="status" id="status" <?= (p($status, 1)) ? "checked" : "" ?>></td>
 		</tr>
 		<tr>
 			<td class="label"><label for="date_start">Startdatum:</label></td>
