@@ -3,8 +3,8 @@
 class Address {
 	public $Address;
 
-	public $Lat;
-	public $Lng;
+	public $Lat = 3;
+	public $Lng = 3;
 
 	public function __construct($Address_ = "") {
 		if(!empty($Address_)) {

@@ -5,6 +5,9 @@
 			<td colspan="2"><input type="text" name="title" id="title" value="<?= p($Title) ?>" /></td>
 		</tr>
 		<tr>
+			<td class="label"><label for="status">Status:</label></td>
+		</tr>
+		<tr>
 			<td class="label"><label for="date_start">Startdatum:</label></td>
 			<td colspan="2"><input type="date" name="date_start" id="date_start" value="<?php if (get_class(p($date_start, new StdClass)) == "DateTime") echo $date_start->format("Y-m-d"); ?>" /></td>
 		</tr>
