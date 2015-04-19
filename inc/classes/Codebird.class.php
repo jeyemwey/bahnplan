@@ -1561,4 +1561,22 @@ class Codebird
         }
         return $parsed;
     }
+
+    /****************************************
+    ************ Bahnplan's fork ************
+    ****************************************/
+    private function getURL() {
+        return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    }
+
+    public function getIntentLink($args_) {
+        $default = [
+            "text" => "",
+            "url" => CodeBird::getURL(),
+            "via" => "jeyemDEV"
+        ];
+        $params = array_merge($default, $args_);
+
+        return "https://twitter.com/intent/tweet?" . http_build_query($params);
+    }
 }

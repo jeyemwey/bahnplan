@@ -718,7 +718,8 @@ html, body {
               html div.wrapper div#sidebar ul#trippoints li.trip ul.friends li .be-a-part-box, body div.wrapper div#sidebar ul#trippoints li.trip ul.friends li .be-a-part-box {
                 background-color: #55acee;
                 font-size: 1.4em;
-                margin-left: -0.2em; }
+                margin-left: -0.2em;
+                text-decoration: none; }
       html div.wrapper div#sidebar footer, body div.wrapper div#sidebar footer {
         font-family: "Roboto Slab";
         border: 0px;

@@ -31,7 +31,9 @@
 				?><li class="get-more"><div class="get-more-box box fa fa-ellipsis-h"></div></li><?php
 			endif;
 			?>
-				<li class="be-a-part"><a class="be-a-part-box box fa fa-twitter" data-toggle="tooltip" title="Fahre mit nach <?= $Trip->Title ?>"></a></li>
+				<li class="be-a-part">
+					<a class="be-a-part-box box fa fa-twitter" data-toggle="tooltip" target="_blank" title="Fahre mit nach <?= $Trip->Title ?>" href="<?= Codebird::getIntentLink(["text" => "Ich fahre mit @" . $app->get("site.twitter") . " nach " . html_entity_decode($Trip->Title) . "!"]) ?>"></a>
+				</li>
 			</ul>
 		<?php endif; ?>
 	</div>
