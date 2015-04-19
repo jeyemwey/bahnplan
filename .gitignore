@@ -4,3 +4,4 @@ inc/Configuration.php
 .sass-cache
 *.css.map
 *.map
+app/css/admin.css.map
