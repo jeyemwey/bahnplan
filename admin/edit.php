@@ -10,9 +10,8 @@ if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
 $id = (int) p($_GET["trip_id"]);
 
 if(isset($_POST["submit"])) {
-
 	$Title = mysql_real_escape_string(htmlentities($_POST["title"]));
-	$status = (!empty(p($_POST['status']))) ? "true" : "false";
+	$checked = (!empty(p($_POST['checked']))) ? "true" : "false";
 
 	$date_start = new DateTime($_POST["date_start"]);
 	$date_end = new DateTime($_POST["date_end"]);
@@ -22,7 +21,7 @@ if(isset($_POST["submit"])) {
 
 	$sql = "UPDATE trips SET
 		Title = '{$Title}',
-		status = {$status},
+		checked = {$checked},
 		date_start = '{$date_start->format("Y-m-d H:i:s")}',
 		date_end = '{$date_end->format("Y-m-d H:i:s")}',
 		marker_address = '{$Address->Address}',
@@ -43,13 +42,12 @@ if(isset($_GET["trip_id"]) AND ((int) $_GET["trip_id"]) != 0) {
 	$Trip = $Query->fetch_assoc();
 
 	$Title = $Trip["Title"];
-	$status = $Trip["status"];
+	$checked = $Trip["checked"];
 	$date_start = new DateTime($Trip["date_start"]);
 	$date_end = new DateTime($Trip["date_end"]);
 	$Description = $Trip["Description"];
 	$Address = new Address($Trip["marker_address"]);
-
-
+	
 } else  //no trip_id given
 	header("Location: new.php");
 

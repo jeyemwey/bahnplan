@@ -5,8 +5,8 @@
 			<td colspan="2"><input type="text" name="title" id="title" value="<?= p($Title) ?>" /></td>
 		</tr>
 		<tr>
-			<td class="label"><label for="status">Status:</label></td>
-			<td colspan="2"><input type="checkbox" name="status" id="status" <?= (p($status, 1)) ? "checked" : "" ?>></td>
+			<td class="label"><label for="checked">Status:</label></td>
+			<td colspan="2"><input type="checkbox" name="checked" id="checked" <?= (!p($in_edit) or p($checked)) ? "checked" : "" ?>></td>
 		</tr>
 		<tr>
 			<td class="label"><label for="date_start">Startdatum:</label></td>

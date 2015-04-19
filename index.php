@@ -32,9 +32,9 @@ include "inc/init.php";
 					GROUP_CONCAT(DISTINCT CAST(f.id AS CHAR)) AS fellowID,
 					GROUP_CONCAT(DISTINCT CAST(f.twittername AS CHAR)) AS twitternames,
 					GROUP_CONCAT(DISTINCT CAST(f.avatar_url AS CHAR)) AS avatar_urls
-					FROM trips t LEFT JOIN fellows f ON t.id = f.trip_id
+					FROM trips t INNER JOIN fellows f ON (t.id = f.trip_id AND t.checked = 1)
 					GROUP BY t.id
-					ORDER BY t.date_start;");
+					ORDER BY t.date_start;") or die($mysqli->error);
 
 				$Markers = [];
 				$first = true;
