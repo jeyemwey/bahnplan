@@ -78,32 +78,32 @@
 
 			//The original function!
 			var addNewFellow = function() {
-				$("#new-fellow-button").html("<img src=\"../app/img/ajax-load-vertical.gif\" alt=\"Waiting\">");
+				if ($("#twittername").val().length) {
+					$("#new-fellow-button").html("<img src=\"../app/img/ajax-load-vertical.gif\" alt=\"Waiting\">");
 
-				var request = {
-					trip_id: <?= $id ?>,
-					twittername: $("#twittername").val()
-				};
-				$.ajax({
-					type: "POST",
-					url: 'fellow/add.php',
-					data: request,
-					success: function(giveback) {
-						$("#new-fellow-button").html("Anlegen");
-						console.log(giveback);
-						
-						$("strong#no-fellows-found").css("display", "none");
-						$("ul#fellows").append("<li class=\"fellow clearfix\" data-id=\"" + giveback.id + "\"><div class=\"left-wrapper\">" +
-							"<img class=\"name\" src=\"" + giveback.avatar_url + "\" />" +
-							"<span class=\"name\">" + giveback.twittername + "</span>" +
-						"</div>" +
-						"<div class=\"button-wrapper\">" +
-							"<a class=\"delete\" data-id=\"" + giveback.id + "\">&times;</a>" +
-						"</div></li>");
-
-						$("#twittername").removeAttr('value');
-					}
-				});
+					var request = {
+						trip_id: <?= $id ?>,
+						twittername: $("#twittername").val()
+					};
+					$.ajax({
+						type: "POST",
+						url: 'fellow/add.php',
+						data: request,
+						success: function(giveback) {
+							$("#new-fellow-button").html("Anlegen");
+							console.log(giveback);
+							
+							$("strong#no-fellows-found").css("display", "none");
+							$("ul#fellows").append("<li class=\"fellow clearfix\" data-id=\"" + giveback.id + "\" data-deleted=\"false\"><div class=\"left-wrapper\">" +
+								"<img class=\"name\" src=\"" + giveback.avatar_url + "\" />" +
+								"<span class=\"name\">" + giveback.twittername + "</span>" +
+							"</div>" +
+							"<div class=\"button-wrapper\">" +
+								"<a class=\"delete\" data-id=\"" + giveback.id + "\">&times;</a>" +
+							"</div></li>");
+						}
+					});
+				}
 			}
 		</script>
 	</td>
