@@ -10,7 +10,7 @@ class User {
 	public function CheckLogin($id_, $hash_) {
 
 		$id = (int) $id_;
-		$hash = mysql_real_escape_string($hash_);
+		$hash = $this->mysqli->real_escape_string($hash_);
 
 		$Query = $this->mysqli->query("SELECT name from users WHERE id = " . $id . " AND hash = \"{$hash}\"") or die($this->mysqli->error);
 		if ($Query->num_rows) {

@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
 			id
 			FROM users
 			WHERE
-				username = \"" . mysql_real_escape_string(strtolower($_POST["username"])) . "\"
+				username = \"" . $mysqli->real_escape_string(strtolower($_POST["username"])) . "\"
 			  AND
 				password = \"" . md5($_POST["password"]) . "\"") or die($mysqli->error);
 
