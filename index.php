@@ -102,7 +102,7 @@ include "inc/init.php";
 				});
 
 				//Be-A-Part-Tooltip
-				$(".be-a-part-box").tooltip();
+				$("[data-toggle='tooltip']").tooltip();
 			}
 
 			window.onload = initialize;

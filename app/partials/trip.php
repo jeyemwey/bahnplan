@@ -23,7 +23,7 @@
 			foreach ($Trip->Friends as $Name => $URL) : 
 				?><li data-count="<?= $count; ?>"
 					<?php echo (($count > 2) AND (count($Trip->Friends) > 3)) ? "class=\"to-be-hidden hidden\"" : ""; ?>
-					><img class="box" src="<?= $URL ?>" alt="<?= $Name ?>" /></li><?php
+					><img class="box" src="<?= $URL ?>" alt="<?= $Name ?>" title="<?= $Name ?>" data-toggle="tooltip" data-placement="top" /></li><?php
 				$count++;
 			endforeach;
 
@@ -32,7 +32,7 @@
 			endif;
 			?>
 				<li class="be-a-part">
-					<a class="be-a-part-box box fa fa-twitter" data-toggle="tooltip" target="_blank" title="Fahre mit nach <?= $Trip->Title ?>" href="<?= Codebird::getIntentLink(["text" => "Ich fahre mit @" . $app->get("site.twitter") . " nach " . html_entity_decode($Trip->Title) . "!"]) ?>"></a>
+					<a class="be-a-part-box box fa fa-twitter" data-toggle="tooltip" data-placement="right" target="_blank" title="Fahre mit nach <?= $Trip->Title ?>" href="<?= Codebird::getIntentLink(["text" => "Ich fahre mit @" . $app->get("site.twitter") . " nach " . html_entity_decode($Trip->Title) . "!"]) ?>"></a>
 				</li>
 			</ul>
 		<?php endif; ?>
