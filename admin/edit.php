@@ -10,12 +10,12 @@ if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
 $id = (int) p($_GET["trip_id"]);
 
 if(isset($_POST["submit"])) {
-	$Title = mysql_real_escape_string(htmlentities($_POST["title"]));
+	$Title = $mysqli->real_escape_string(htmlentities($_POST["title"]));
 	$checked = (!empty(p($_POST['checked']))) ? "true" : "false";
 
 	$date_start = new DateTime($_POST["date_start"]);
 	$date_end = new DateTime($_POST["date_end"]);
-	$Description = mysql_real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
+	$Description = $mysqli->real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
 
