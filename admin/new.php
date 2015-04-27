@@ -16,7 +16,7 @@ if(isset($_POST["submit"])) {
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
 
-	echo $sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
+	$sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
 		'{$Title}',
 		'{$date_start->format("Y-m-d H:i:s")}',
 		'{$date_end->format("Y-m-d H:i:s")}',
@@ -24,9 +24,13 @@ if(isset($_POST["submit"])) {
 		'{$Address->Lat}, {$Address->Lng}',
 		'{$Description}');";
 
-	if($mysqli->query($sql)) 
-		header("Location: edit.php?id=" . $mysqli->insert_id);
-	else echo "Irgendwas ist schiefgelaufen.";
+	if ($date_start < $date_end) {
+		if($mysqli->query($sql)) 
+			header("Location: edit.php?id=" . $mysqli->insert_id);
+		else echo "Irgendwas ist schiefgelaufen.";
+	} else {
+		echo "Das Enddatum ist vor dem Startdatum >.<";
+	}
 }
 
 $feonly = true;

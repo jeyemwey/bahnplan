@@ -3,8 +3,8 @@
 class Address {
 	public $Address;
 
-	public $Lat = 3;
-	public $Lng = 3;
+	public $Lat = 51;
+	public $Lng = 6;
 
 	public function __construct($Address_ = "") {
 		if(!empty($Address_)) {
@@ -18,9 +18,12 @@ class Address {
 
 		$result = json_decode($call);
 
-		$geometry = $result->results[0]->geometry->location;
+		if (isset($result->results[0])) {
+			$geometry = $result->results[0]->geometry->location;
 
-		$this->Lat = $geometry->lat;
-		$this->Lng = $geometry->lng;
+			$this->Lat = $geometry->lat;
+			$this->Lng = $geometry->lng;
+		}
+		
 	}
 }

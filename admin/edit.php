@@ -30,10 +30,14 @@ if(isset($_POST["submit"])) {
 
 		WHERE id = {$id};";
 
-	if($mysqli->query($sql)) 
-		$message = "&Auml;nderung gespeichert!";
-	else
-		$message = "Irgendwas ist schiefgelaufen.";
+	if ($date_start < $date_end) {
+		if($mysqli->query($sql)) 
+			$message = "&Auml;nderung gespeichert!";
+		else
+			$message = "Irgendwas ist schiefgelaufen.";
+	} else {
+		$message = "Das Enddatum ist vor dem Startdatum >.<";
+	}
 }
 
 if(isset($_GET["trip_id"]) AND ((int) $_GET["trip_id"]) != 0) {
