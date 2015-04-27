@@ -9,7 +9,7 @@ return [
 	],
 	"site" => [
 		"name" => "Jannik",
-		"footer" => "Created with &hearts; in Germany. Checkout the source on [<i class=\"fa fa-github\"></i> Github](https://github.com/jeyemwey/bahnplan). [Admin](admin)"
+		"footer" => 'Created with &hearts; in Germany. Checkout the source on [<abbr title="' . exec('git describe --always') . '"><i class="fa fa-github"></i></abbr> Github](https://github.com/jeyemwey/bahnplan). [Admin](admin)'
 	],
 	"twitter" => [
 		"app" => [

@@ -732,6 +732,9 @@ html, body {
         html div.wrapper div#sidebar footer a, body div.wrapper div#sidebar footer a {
           text-decoration: none;
           color: #3DAEF5; }
+        html div.wrapper div#sidebar footer abbr, body div.wrapper div#sidebar footer abbr {
+          text-decoration: none;
+          border-bottom: 0; }
     html div.wrapper #map_canvas, body div.wrapper #map_canvas {
       height: 100%;
       background-color: #f9f9bb;
