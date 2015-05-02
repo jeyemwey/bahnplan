@@ -30,7 +30,7 @@ if(isset($_POST["submit"])) {
 
 		WHERE id = {$id};";
 
-	if ($date_start < $date_end) {
+	if ($date_start <= $date_end) {
 		if($mysqli->query($sql)) 
 			$message = "&Auml;nderung gespeichert!";
 		else

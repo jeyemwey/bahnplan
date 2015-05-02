@@ -24,7 +24,7 @@ if(isset($_POST["submit"])) {
 		'{$Address->Lat}, {$Address->Lng}',
 		'{$Description}');";
 
-	if ($date_start < $date_end) {
+	if ($date_start <= $date_end) {
 		if($mysqli->query($sql)) 
 			header("Location: edit.php?id=" . $mysqli->insert_id);
 		else echo "Irgendwas ist schiefgelaufen.";
