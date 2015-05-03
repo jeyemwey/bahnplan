@@ -13,8 +13,8 @@ if(isset($_POST["submit"])) {
 	$Title = $mysqli->real_escape_string(htmlentities($_POST["title"]));
 	$checked = (!empty(p($_POST['checked']))) ? "true" : "false";
 
-	$date_start = (empty($_POST['date_start'])) ? "0000-00-00" : new DateTime($_POST["date_start"]);
-	$date_end = (empty($_POST['date_end'])) ? "0000-00-00" : new DateTime($_POST["date_end"]);
+	$date_start = new DateTime((empty($_POST['date_start'])) ? "0000-00-00" : $_POST["date_start"]);
+	$date_end = new DateTime((empty($_POST['date_end'])) ? "0000-00-00" : $_POST["date_end"]);
 	$Description = $mysqli->real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
@@ -47,8 +47,8 @@ if(isset($_GET["trip_id"]) AND ((int) $_GET["trip_id"]) != 0) {
 
 	$Title = $Trip["Title"];
 	$checked = $Trip["checked"];
-	$date_start = new DateTime($Trip["date_start"]);
-	$date_end = new DateTime($Trip["date_end"]);
+	$date_start = $Trip["date_start"];
+	$date_end = $Trip["date_end"];
 	$Description = $Trip["Description"];
 	$Address = new Address($Trip["marker_address"]);
 	

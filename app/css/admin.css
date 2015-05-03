@@ -409,6 +409,9 @@ body {
     body button#update-avatars {
       float: right;
       width: 10em; }
+    body button#unsetDates {
+      margin-top: 0px;
+      float: right; }
   body #title h2 {
     display: inline-block;
     line-height: 1.5em; }
