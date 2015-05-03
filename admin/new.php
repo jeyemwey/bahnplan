@@ -10,21 +10,22 @@ if (!$me->CheckLogin(p($_SESSION['id']), p($_SESSION['hash']))) {
 if(isset($_POST["submit"])) {
 
 	$Title = $mysqli->real_escape_string(htmlentities($_POST["title"]));
-	$date_start = new DateTime($_POST["date_start"]);
-	$date_end = new DateTime($_POST["date_end"]);
+	$date_start = (empty($_POST['date_start'])) ? "0000-00-00" : new DateTime($_POST["date_start"]);
+	$date_end = (empty($_POST['date_end'])) ? "0000-00-00" : new DateTime($_POST["date_end"]);
 	$Description = $mysqli->real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
 
-	$sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
-		'{$Title}',
-		'{$date_start->format("Y-m-d H:i:s")}',
-		'{$date_end->format("Y-m-d H:i:s")}',
-		'{$Address->Address}',
-		'{$Address->Lat}, {$Address->Lng}',
-		'{$Description}');";
 
-	if ($date_start <= $date_end) {
+	if (($date_start <= $date_end) OR (empty($_POST['date_start']) AND empty($_POST['date_end']))) {
+		$sql = "INSERT INTO trips (id, Title, date_start, date_end, marker_address, marker_coords, Description) VALUES (NULL,
+			'{$Title}',
+			'" . ((empty($_POST['date_start'])) ? $date_start : $date_start->format("Y-m-d H:i:s")  ) . "',
+			'" . ((empty($_POST['date_end'])) ? $date_end : $date_end->format("Y-m-d H:i:s")  ) . "',
+			'{$Address->Address}',
+			'{$Address->Lat}, {$Address->Lng}',
+			'{$Description}');";
+
 		if($mysqli->query($sql)) 
 			header("Location: edit.php?id=" . $mysqli->insert_id);
 		else echo "Irgendwas ist schiefgelaufen.";

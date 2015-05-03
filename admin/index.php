@@ -11,17 +11,22 @@ $prev = isset($_GET["prev"]);
 		<th class="action">Aktion</th>
 	</tr>
 	<?php
-	$Query = $mysqli->query("SELECT * FROM trips WHERE " . (($prev) ? "date_start <=" : " date_end >=") . " now() ORDER BY date_start ASC") or die($mysqli->error);
+	$Query = $mysqli->query("SELECT * FROM trips WHERE " . (($prev) ? "date_start <=" : " date_end >=") . " now() OR (date_start = '0000-00-00' AND date_end = '0000-00-00') ORDER BY date_start ASC") or die($mysqli->error);
 	while ($Trip = $Query->fetch_object("Trip")): 
 		?>
 		<tr>
 			<td class="title"><?= $Trip->Title ?></td>
 			<td class="dates">
 				<?php
-				echo $Trip->DateStart->format("d.m.Y");
-				if (!$Trip->oneDay):
-					echo "&mdash;" . $Trip->DateEnd->format("d.m.Y");
-				endif; //<if (!$Trip->oneDay): 
+
+				if (!$Trip->DateNotGiven):
+					echo $Trip->DateStart->format("d.m.Y");
+					if (!$Trip->oneDay):
+						echo "&mdash;" . $Trip->DateEnd->format("d.m.Y");
+					endif; //<if (!$Trip->oneDay): 
+				else:
+					echo "Datum noch nicht fix.";
+				endif;
 				?>
 			</td>
 			<td class="description">
