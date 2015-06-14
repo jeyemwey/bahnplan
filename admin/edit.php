@@ -13,24 +13,24 @@ if(isset($_POST["submit"])) {
 	$Title = $mysqli->real_escape_string(htmlentities($_POST["title"]));
 	$checked = (!empty(p($_POST['checked']))) ? "true" : "false";
 
-	$date_start = new DateTime($_POST["date_start"]);
-	$date_end = new DateTime($_POST["date_end"]);
+	$date_start = new DateTime((empty($_POST['date_start'])) ? "0000-00-00" : $_POST["date_start"]);
+	$date_end = new DateTime((empty($_POST['date_end'])) ? "0000-00-00" : $_POST["date_end"]);
 	$Description = $mysqli->real_escape_string(htmlentities($_POST["description"], ENT_NOQUOTES));
 	$Address = new Address(htmlentities($_POST["address"]));
 	$Address->getLatLng();
 
-	$sql = "UPDATE trips SET
-		Title = '{$Title}',
-		checked = {$checked},
-		date_start = '{$date_start->format("Y-m-d H:i:s")}',
-		date_end = '{$date_end->format("Y-m-d H:i:s")}',
-		marker_address = '{$Address->Address}',
-		marker_coords = '{$Address->Lat}, {$Address->Lng}',
-		Description = '{$Description}'
+	if ($date_start <= $date_end OR (empty($_POST['date_start']) AND empty($_POST['date_end']))) {
+		$sql = "UPDATE trips SET
+			Title = '{$Title}',
+			checked = {$checked},
+			date_start = '{$date_start->format("Y-m-d H:i:s")}',
+			date_end = '{$date_end->format("Y-m-d H:i:s")}',
+			marker_address = '{$Address->Address}',
+			marker_coords = '{$Address->Lat}, {$Address->Lng}',
+			Description = '{$Description}'
 
-		WHERE id = {$id};";
+			WHERE id = {$id};";
 
-	if ($date_start < $date_end) {
 		if($mysqli->query($sql)) 
 			$message = "&Auml;nderung gespeichert!";
 		else
@@ -47,8 +47,8 @@ if(isset($_GET["trip_id"]) AND ((int) $_GET["trip_id"]) != 0) {
 
 	$Title = $Trip["Title"];
 	$checked = $Trip["checked"];
-	$date_start = new DateTime($Trip["date_start"]);
-	$date_end = new DateTime($Trip["date_end"]);
+	$date_start = $Trip["date_start"];
+	$date_end = $Trip["date_end"];
 	$Description = $Trip["Description"];
 	$Address = new Address($Trip["marker_address"]);
 	

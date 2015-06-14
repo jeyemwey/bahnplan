@@ -36,18 +36,24 @@ include "inc/init.php";
 					INNER JOIN fellows f ON (
 						t.id = f.trip_id 
 						AND t.checked = 1
-						AND t.date_end > now()
+						AND t.date_end > now() OR (t.date_start = '0000-00-00' AND t.date_end = '0000-00-00')
 					)
 					GROUP BY t.id
 					ORDER BY t.date_start;") or die($mysqli->error);
 
 				$Markers = [];
 				$first = true;
-				while ($Trip = $Query->fetch_object("TripInMain")): 
-					include "app/partials/trip.php";
-					$first = false;
+				while ($Trip = $Query->fetch_object("TripInMain")):
 
-					$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);
+					echo "<!-- \n";
+						print_r($Trip); 
+					echo "\n-->";
+					if ($Trip->DateEnd >= new DateTime() OR ($Trip->date_start == "0000-00-00" AND $Trip->date_end == "0000-00-00")):
+						include "app/partials/trip.php";
+						$first = false;
+
+						$Markers[$Trip->id] = array($Trip->Title, $Trip->marker_coords);
+					endif;
 				endwhile;
 
 				?>

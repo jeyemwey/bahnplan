@@ -6,15 +6,18 @@
 		</tr>
 		<tr>
 			<td class="label"><label for="checked">Status:</label></td>
-			<td colspan="2"><input type="checkbox" name="checked" id="checked" <?= (!p($in_edit) or p($checked)) ? "checked" : "" ?>></td>
+			<td colspan="2">
+				<input type="checkbox" name="checked" id="checked" <?= (!p($in_edit) or p($checked)) ? "checked" : "" ?>>
+				<button id="unsetDates">Daten löschen</button>
+			</td>
 		</tr>
 		<tr>
 			<td class="label"><label for="date_start">Startdatum:</label></td>
-			<td colspan="2"><input type="date" name="date_start" id="date_start" value="<?php if (get_class(p($date_start, new StdClass)) == "DateTime") echo $date_start->format("Y-m-d"); ?>" /></td>
+			<td colspan="2"><input type="date" name="date_start" id="date_start" value="<?php echo (p($date_start) == "0000-00-00") ? "" : $date_start; ?>" /></td>
 		</tr>
 		<tr>
 			<td class="label"><label for="date_end">Enddatum:</label></td>
-			<td colspan="2"><input type="date" name="date_end" id="date_end" value="<?php if (get_class(p($date_end, new StdClass)) == "DateTime") echo $date_end->format("Y-m-d"); ?>" /></td>
+			<td colspan="2"><input type="date" name="date_end" id="date_end" value="<?php echo (p($date_end) == "0000-00-00") ? "" : $date_end;  ?>" /></td>
 		</tr>
 		<tr>
 			<td class="label"><label for="description">Beschreibung (<i class="fa fa-font">Markdown!</i>):</label></td>
@@ -34,6 +37,13 @@
 						$("#description-markdown-interpreted").html(md.text);
 					}
 				});
+			});
+			$("#unsetDates").on("click", function(e) {
+				$("#date_start").val("");
+				$("#date_end").val("");
+
+
+				e.preventDefault();
 			});
 			$(function() {
 				$("#description").triggerHandler("blur");

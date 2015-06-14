@@ -3,10 +3,14 @@
 		<span class="dest"><?= $Trip->Title ?> (<?= count($Trip->Friends) ?>)</span>
 		<span class="time clearfix">
 			<?php
-			echo $Trip->DateStart->format("d.m.Y");
-			if (!$Trip->oneDay):
-				echo "<br />&mdash;" . $Trip->DateEnd->format("d.m.Y");
-			endif; //<if (!$Trip->oneDay): 
+			if(!$Trip->DateNotGiven):
+				echo $Trip->DateStart->format("d.m.Y");
+				if (!$Trip->oneDay):
+					echo "<br />&mdash;" . $Trip->DateEnd->format("d.m.Y");
+				endif;
+			else: 
+				echo "Mal sehen!";
+			endif;
 			?>
 		</span>
 	</a>
