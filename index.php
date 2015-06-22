@@ -10,7 +10,7 @@ include "inc/init.php";
 	<link rel="stylesheet" type="text/css" href="app/css/application.css" />
 	<link rel="stylesheet" type="text/css" href="app/css/font-awesome.min.css" />
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="wrapper">
@@ -115,9 +115,9 @@ include "inc/init.php";
 			</script>
 		</div>
 	</div>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
 <?php include "inc/die.php"; ?>

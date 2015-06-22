@@ -25,7 +25,7 @@ if(empty($Trip) OR empty($Twittername)) {
 	Codebird::setConsumerKey($app->get("twitter.app.key"), $app->get("twitter.app.secret"));
 	$cb = Codebird::getInstance();
 	$cb->setToken($app->get("twitter.user.token"), $app->get("twitter.user.secret"));
-	$Avatar = $cb->users_show("screen_name=" . $Twittername)->profile_image_url;
+	$Avatar = $cb->users_show("screen_name=" . $Twittername)->profile_image_url_https;
 	
 	//Write to DB
 	$sql = "INSERT INTO fellows
