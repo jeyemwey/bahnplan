@@ -4,7 +4,7 @@ Place to share my travel plans.
 
 ## Set up
 
-In the folder `inc`, you can find a file called `Configuration.sample.php`. Duplicate it and delete ".sample", so you have `Configuration.php`. In there, you can find some default database config:
+In the folder `inc`, you can find a file called `Configuration.sample.php`. Duplicate it and delete ".sample", so you have `Configuration.php`. Next to some text boxes which you might want to change, you can find some default database config:
 
 ```
 "db" => [
@@ -43,7 +43,7 @@ Change the things to the stuff you have from Twitter.
 
 ## Access
 
-You can access *admin/* with credentials: `jannik` : `123456`.
+You can access *admin/* with credentials: `jannik` : `123456`. You may want to change these things in the database.
 
 ## Makes use of:
 
@@ -63,4 +63,4 @@ You can access *admin/* with credentials: `jannik` : `123456`.
 * The guy on [StackOverflow](http://stackoverflow.com/questions/29059090/table-inside-of-another) who gave me the query string.
 
 ## Me on Twitter
-[@gltyllthsm](https://twitter.iamjannik.me)
+[@confuzd_](https://twitter.com/confuzd_)
